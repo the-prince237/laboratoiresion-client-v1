@@ -52,13 +52,13 @@ jobs:
         run: |
           scp -o StrictHostKeyChecking=no docker-compose.yml ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:/home/github/laboratoiresion/docker-compose.yml
 
-      - name: Deploy and Ensure SSL
+      - name: Deploy And Cleanup Old Containers
         run: |
           BRANCH_NAME=$(echo $GITHUB_REF | awk -F/ '{print $3}')
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
             export BRANCH_NAME=$(echo ${GITHUB_REF##*/}) &&
-            docker stop laboratoiresion-v1:${BRANCH_NAME} || true
-            docker rm laboratoiresion-v1:${BRANCH_NAME} || true
+            docker stop laboratoiresion-v1-${BRANCH_NAME} || true
+            docker rm laboratoiresion-v1-${BRANCH_NAME} || true
             cd /home/github/laboratoiresion &&
             echo '🔹 Pulling latest image...'
             docker compose pull web &&

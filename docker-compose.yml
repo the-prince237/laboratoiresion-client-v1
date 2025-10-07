@@ -1,7 +1,7 @@
 services:
   web:
-    image: ghcr.io/the-prince237/laboratoiresion:${BRANCH_NAME:-latest}
-    container_name: laboratoiresion-${BRANCH_NAME:-latest}
+    image: ghcr.io/the-prince237/laboratoiresion-v1:${BRANCH_NAME}
+    container_name: laboratoiresion-v1-${BRANCH_NAME}
     restart: always
     ports:
       - "8001:3000" # Next.js exposed on 8001 internally
