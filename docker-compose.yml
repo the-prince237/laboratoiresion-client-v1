@@ -1,0 +1,16 @@
+services:
+  web:
+    image: ghcr.io/the-prince237/laboratoiresion:${BRANCH_NAME:-latest}
+    container_name: laboratoiresion-${BRANCH_NAME:-latest}
+    restart: always
+    ports:
+      - "8001:3000" # Next.js exposed on 8001 internally
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    networks:
+      - webnet
+
+networks:
+  webnet:
+    driver: bridge
