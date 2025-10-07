@@ -54,10 +54,14 @@ jobs:
 
       - name: Deploy and Ensure SSL
         run: |
+          BRANCH_NAME=$(echo $GITHUB_REF | awk -F/ '{print $3}')
           ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "
+            export BRANCH_NAME=$(echo ${GITHUB_REF##*/}) &&
+            docker stop easylab-${BRANCH_NAME} || true
+            docker rm easylab-${BRANCH_NAME} || true
             cd /home/github/laboratoiresion &&
             echo '🔹 Pulling latest image...'
-            docker compose pull web
+            docker compose pull web &&
             echo '🔹 Restarting container...'
             docker compose up -d --remove-orphans
 
