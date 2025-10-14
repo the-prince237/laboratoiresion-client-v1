@@ -13,7 +13,7 @@ export function CustomToggler<TogglerEnum>({
   const [toggleType, setToggleType] = React.useState<TogglerEnum>(initialToggleType);
   return (
     <>
-      <div className='relative flex h-[61px] bg-white/10 backdrop-blur-md w-[300px] max-w-full cursor-pointer rounded-[10px] border-[1px] border-solid border-gray p-2.5 xl:h-[75px] '>
+      <div className='relative flex h-[61px] bg-white/50 backdrop-blur-xl w-[300px] max-w-full cursor-pointer rounded-[10px] border-[1px] border-solid border-gray p-2.5 xl:h-[75px] '>
         {togglerItems.map(({ title, tag, Icon }, index) => (
           <div
             key={index}
