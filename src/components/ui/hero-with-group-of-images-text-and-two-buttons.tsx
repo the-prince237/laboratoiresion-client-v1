@@ -5,6 +5,7 @@ import { HeroToggler } from "../home/hero";
 import { GridBackground, Spotlight } from "../blocks/spotlight-new";
 import { GridPattern } from "./grid-pattern";
 import { cn } from "@/lib/utils";
+import { Video } from "../common";
 
 function Hero() {
   return (
@@ -37,13 +38,16 @@ function Hero() {
                 "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
                 "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
               )}/>
-            <div className="flex gap-4 flex-col">
+            <div className="flex gap-8 flex-col">
               <h1 className="text-5xl md:text-7xl tracking-tighter text-left font-regular">
                 Analyse Biologique et Imagerie Médicale
               </h1>
-              <div className="w-full flex flex-col gap-2">
+              <div className="w-full flex flex-col gap-4">
                 <Badge className="w-fit" variant="outline">Je suis ...</Badge>
+                <div className="flex flex-col gap-8">
+
                 <HeroToggler />
+                </div>
               </div>
             </div>
             <div className="flex flex-row gap-4">
@@ -56,9 +60,15 @@ function Hero() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8">
-            <div className="bg-muted rounded-md aspect-square"></div>
-            <div className="bg-muted rounded-md row-span-2"></div>
-            <div className="bg-muted rounded-md aspect-square"></div>
+            <div className="bg-muted rounded-md aspect-square">
+              <Video className="relative rounded-md border-solid border-2 brightness-50 grayscale-50 hover:grayscale-0" sources={[{ src: '/videos/hero-vid-1.mp4' }]} />
+            </div>
+            <div className="bg-muted rounded-md row-span-2">
+              <Video className="relative rounded-md border-solid border-2 brightness-50 grayscale-50 hover:grayscale-0" sources={[{ src: '/videos/hero-vid-2.mp4' }]} />
+            </div>
+            <div className="bg-muted rounded-md aspect-square">              
+              <Video className="relative rounded-md border-solid border-2 brightness-50 grayscale-50 hover:grayscale-0" sources={[{ src: '/videos/hero-vid-3.mp4' }]} />
+            </div>
           </div>
         </div>
       </div>

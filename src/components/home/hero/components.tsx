@@ -2,10 +2,9 @@
 import { CustomToggler } from "@/components/common";
 import { VisitorEnum } from "@/domain";
 import { ReactNode } from "react";
-import { BsSafe } from "react-icons/bs";
 import { GiDoctorFace, GiHealthCapsule } from "react-icons/gi";
 
-const ContentParagraph = ({children}: {children: ReactNode}) => <p className="text-lg leading-tight max-w-md tracking-tight text-muted-foreground text-left">
+const ContentParagraph = ({children}: {children: ReactNode}) => <p className="text-xl leading-relax max-w-md tracking-tight text-muted-foreground text-left font-light">
                   {children}
                 </p>
 
