@@ -1,0 +1,5 @@
+export enum VisitorEnum {
+  PATIENT = 'PATIENT',
+  PRESCRIBER = 'PRESCRIBER',
+  INSURANCE = 'INSURANCE',
+}
