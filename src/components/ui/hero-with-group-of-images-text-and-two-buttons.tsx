@@ -9,7 +9,7 @@ import { Video } from "../common";
 
 function Hero() {
   return (
-    <div className="w-full relative overflow-hidden py-20 lg:py-40">
+    <div className="w-full overflow-hidden py-20 lg:py-40">
 
       <GridBackground />
       <div className="opacity-25">
@@ -38,7 +38,7 @@ function Hero() {
                 "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
                 "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
               )}/>
-            <div className="flex gap-8 px-5 flex-col">
+            <div className="flex gap-8 padded-x flex-col">
               <h1 className="text-5xl md:text-7xl tracking-tighter text-left font-regular">
                 Analyse Biologique et Imagerie Médicale
               </h1>
@@ -50,7 +50,7 @@ function Hero() {
               </div>
             </div>
 
-            <div className="flex px-5 flex-row gap-4">
+            <div className="flex padded-x flex-row gap-4">
               <Button size="lg" className="gap-4 bg-white/50 backdrop-blur-xl" variant="outline">
                 Jump on a call <PhoneCall className="w-4 h-4" />
               </Button>
@@ -59,7 +59,7 @@ function Hero() {
               </Button>
             </div>
           </div>
-          <div className="grid px-5 grid-cols-2 gap-4 xl:gap-8">
+          <div className="grid padded-x grid-cols-2 gap-4 xl:gap-8">
             <div className="bg-muted rounded-md aspect-square">
               <Video className="relative rounded-md border-solid border-2 brightness-50 grayscale-50 hover:grayscale-0" sources={[{ src: '/videos/hero-vid-1.mp4' }]} />
             </div>
