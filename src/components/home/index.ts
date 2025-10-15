@@ -1,3 +1,5 @@
 export * from './hero/hero'
 export * from './stats'
 export * from './features'
+export * from './contacts'
+export * from './testimonials'

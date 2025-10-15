@@ -1,11 +1,13 @@
-import { Features, HomeHero, HomeStats } from "@/components";
+import { Contacts, Features, HomeHero, HomeStats, Testimonials } from "@/components";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       <HomeHero />
       <HomeStats />
       <Features />
+      <Contacts />
+      <Testimonials />
     </main>
   );
 }
