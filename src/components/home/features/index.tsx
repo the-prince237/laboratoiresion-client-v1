@@ -18,7 +18,7 @@ function GradientText({
   as: Component = "span",
   ...props
 }: GradientTextProps) {
-  const MotionComponent = motion.create(Component as any)
+  const MotionComponent = motion.create(Component)
 
   return (
     <MotionComponent
@@ -37,13 +37,6 @@ function GradientText({
       </span>
     </MotionComponent>
   )
-}
-
-const SPRING_TRANSITION_CONFIG = {
-  type: "spring",
-  stiffness: 150,
-  damping: 20,
-  mass: 0.5,
 }
 
 const filterVariants: Variants = {
