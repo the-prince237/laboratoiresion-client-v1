@@ -14,8 +14,8 @@ export const Header = () => {
   const [openedSubMenu, setOpenenedSubMenu] = useState<null | string>(null);
   const router = useRouter();
   return (
-    <div className='padded-x fixed z-50 m-auto flex h-fit w-full flex-col items-end pt-8 font-sans'>
-      <div className='z-50 flex min-h-20 w-full items-center justify-between rounded-2xl bg-white/50 px-5 py-2 shadow-2xl backdrop-blur-lg'>
+    <header className='fixed z-50 m-auto flex h-fit w-full flex-col items-end font-sans'>
+      <div className='z-50 flex min-h-20 w-full items-center justify-between bg-white/50 px-5 py-4 border-gray-200 border-0 border-b-[1px] border-solid backdrop-blur-lg'>
         <Link href='/'>
           <Logo />
         </Link>
@@ -106,6 +106,6 @@ export const Header = () => {
           </Link>
         </div>
       </div>
-    </div>
+    </header>
   );
 };

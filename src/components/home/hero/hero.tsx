@@ -15,7 +15,7 @@ export function HomeHero() {
       <div className="container relative mx-auto">
         <div className="grid grid-cols-1 gap-8 items-center lg:grid-cols-2">
           <div className="flex gap-8 relative justify-evenly h-full flex-col">
-             <GridPattern
+            <GridPattern
               squares={[
                 [4, 4],
                 [5, 1],
@@ -47,7 +47,7 @@ export function HomeHero() {
             </div>
 
             <div className="flex padded-x flex-row gap-4">
-              <Button size="lg" className="gap-4 bg-white/50 backdrop-blur-xl" variant="outline">
+              <Button size="lg" className="gap-4 bg-secondary text-white backdrop-blur-xl" variant="outline">
                 Jump on a call <PhoneCall className="w-4 h-4" />
               </Button>
               <Button size="lg" className="gap-4">
@@ -57,13 +57,13 @@ export function HomeHero() {
           </div>
           <div className="grid padded-x grid-cols-2 gap-4 xl:gap-8">
             <div className="bg-muted rounded-md aspect-square">
-              <Video className="relative rounded-md border-solid border-2 brightness-50 grayscale-50 hover:grayscale-0" sources={[{ src: '/videos/hero-vid-1.mp4' }]} />
+              <Video className="relative rounded-md border-solid border-2" sources={[{ src: '/videos/hero-vid-1.mp4' }]} />
             </div>
             <div className="bg-muted rounded-md row-span-2">
-              <Video className="relative rounded-md border-solid border-2 brightness-50 grayscale-50 hover:grayscale-0" sources={[{ src: '/videos/hero-vid-2.mp4' }]} />
+              <Video className="relative rounded-md border-solid border-2" sources={[{ src: '/videos/hero-vid-2.mp4' }]} />
             </div>
             <div className="bg-muted rounded-md aspect-square">              
-              <Video className="relative rounded-md border-solid border-2 brightness-50 grayscale-50 hover:grayscale-0" sources={[{ src: '/videos/hero-vid-3.mp4' }]} />
+              <Video className="relative rounded-md border-solid border-2" sources={[{ src: '/videos/hero-vid-3.mp4' }]} />
             </div>
           </div>
         </div>
