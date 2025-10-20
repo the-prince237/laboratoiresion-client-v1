@@ -3,7 +3,7 @@ name: Laboratoires Sion Dev CI/CD
 on:
   push:
     branches:
-      - '**'
+      - 'main'
 
 jobs:
   build:
