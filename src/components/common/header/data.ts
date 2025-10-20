@@ -14,7 +14,7 @@ export const navigationItems = [
       },
       {
         title: 'Imagerie Médicale',
-        link: '/servcies/medical-imaging',
+        link: '/services/medical-imaging',
         Icon: Scan,
       },
       {
