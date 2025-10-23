@@ -45,7 +45,7 @@ export function ServiceHero() {
 
 export function ServiceContent() {
   const serviceTag = useParams().serviceTag as ServiceTag;
-  const { title, description, items, children, faq } = services.find(s => s.tag === serviceTag)?.content!;
+  const { title="", description="", items=[], children=<></>, faq = []} = services.find(s => s.tag === serviceTag)?.content || {};
 
   return (
     <section className="py-12 lg:py-28 xl:py-44 padded-x w-full flex flex-col items-center gap-12">
@@ -57,7 +57,7 @@ export function ServiceContent() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-        {items.map((item, index) => (
+        {items?.map((item, index) => (
           <ServiceCard key={index} {...item} index={index} />
       ))}
       </div>
