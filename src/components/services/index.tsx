@@ -5,6 +5,7 @@ import { ImagesSlider } from "./expansion-hero";
 import { useParams } from "next/navigation";
 import { services, ServiceTag } from "./data";
 import ServiceCard from "./service-card";
+import FAQ from "./faq";
 
 export function ServiceHero() {
   const serviceTag = useParams().serviceTag as ServiceTag;
@@ -57,9 +58,13 @@ export function ServiceContent() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
         {items.map((item, index) => (
-          <ServiceCard {...item} index={index} />
+          <ServiceCard key={index} {...item} index={index} />
       ))}
       </div>
+
+      {children}
+
+      <FAQ faqs={faq} />
     </section>
   );
 }

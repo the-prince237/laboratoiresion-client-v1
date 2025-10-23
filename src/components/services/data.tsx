@@ -1,3 +1,4 @@
+import { IconType } from "react-icons"
 
 export interface ExamItem {
   title: string
@@ -16,13 +17,14 @@ export interface ChildSection {
 export interface FaqItem {
   question: string
   answer: string
+  Icon: IconType
 }
 
 export interface ExamensSection {
   title: string
   description: string
   items: ExamItem[]
-  children?: ChildSection
+  children?: React.ReactNode
   faq: FaqItem[]
 }
 export type ServiceTag = "biological-analyses" | "medical-imaging" | "functional-exploration";
@@ -93,37 +95,35 @@ export const services :  {
         },
       ],
 
-      children: {
-        title: "Prenez soin de votre santé !",
-        description:
-          "Le Laboratoire Sion est le laboratoire de biologie médicale de référence au Cameroun.",
-        link: "/trouver-un-laboratoire",
-        linkLabel: "Trouver un laboratoire",
-      },
+      children: <></>,
 
       faq: [
         {
           question: "Comment interpréter mes résultats ?",
           answer:
             "Les résultats de vos analyses doivent être interprétés par un professionnel de santé qui prendra en compte votre état clinique, vos antécédents médicaux et les valeurs de référence du laboratoire. Évitez toute interprétation personnelle sans avis médical.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>,
         },
         {
           question:
             "Comment fonctionne un test immuno-sérologique et pourquoi est-il utilisé pour le diagnostic des maladies infectieuses ?",
           answer:
             "Un test immuno-sérologique détecte les anticorps produits par notre système immunitaire en réponse à une infection. Ces anticorps aident à combattre l’infection et restent souvent dans le sang pendant un certain temps. Le test permet donc de révéler si une personne a été exposée à un agent infectieux spécifique.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
         },
         {
           question:
             "Comment interpréter un résultat de test de dépistage des anticorps du VIH ?",
           answer:
             "Le test de dépistage des anticorps du VIH indique si votre organisme a développé des anticorps contre le virus. Un résultat positif doit toujours être confirmé par un second test pour exclure tout faux positif. En cas de doute, consultez un professionnel de santé.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8c-1.11 0-2.08.402-2.599 1M12 16c-1.11 0-2.08-.402-2.599-1M12 16c1.11 0 2.08-.402 2.599-1M15 21h3m-3 0v-3m0 3l-3-3m3 3l3-3M9 3H6m3 0v3m0-3l3 3m-3-3L6 6" /></svg>,
         },
         {
           question:
             "Je veux faire un test, mais je ne sais pas comment me préparer.",
           answer:
             "La préparation dépend du type d’examen. Certains tests nécessitent un jeûne, d’autres non. Il est recommandé de demander des instructions spécifiques à votre laboratoire avant le prélèvement afin d’obtenir des résultats fiables.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
         },
       ],
     }
@@ -159,35 +159,33 @@ export const services :  {
         },
       ],
 
-      children: {
-        title: "Exploration Avancée par Imagerie Médicale",
-        description:
-          "Grâce à notre équipement de pointe et à notre équipe spécialisée, nous vous offrons des solutions d’imagerie avancées pour un diagnostic précis et une prise en charge efficace de votre santé. Faites confiance à notre expertise pour des résultats fiables et une approche personnalisée de vos besoins médicaux.",
-        link: "/technologie",
-        linkLabel: "Nos équipements à la pointe de la technologie",
-      },
+      children: <></>,
 
       faq: [
         {
           question: "Quelle est la préparation nécessaire avant un examen d’imagerie médicale ?",
           answer:
             "La préparation dépend du type d’examen. Certains examens, comme l’échographie abdominale, nécessitent d’être à jeun, tandis que d’autres ne demandent aucune préparation particulière. Votre médecin ou notre personnel vous informera des consignes spécifiques avant l’examen.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
         },
         {
           question: "Quels sont les avantages de chaque type d’examen d’imagerie médicale par rapport aux autres ?",
           answer:
             "Chaque type d’examen d’imagerie a ses avantages selon la pathologie recherchée. Par exemple, l’IRM est idéale pour visualiser les tissus mous, la tomodensitométrie (scanner) pour obtenir des images détaillées des os et organes internes, et la radiographie pour détecter rapidement des fractures ou infections osseuses.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
         },
         {
           question:
             "Quelles sont les précautions à prendre pour les femmes enceintes ou allaitantes lors d’examens d’imagerie médicale ?",
           answer:
             "Les femmes enceintes ou allaitantes doivent toujours informer le personnel médical avant un examen d’imagerie. Certains examens utilisant des rayons X ou des produits de contraste peuvent être contre-indiqués. Dans ces cas, des alternatives comme l’échographie peuvent être privilégiées.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8c-1.11 0-2.08.402-2.599 1M12 16c-1.11 0-2.08-.402-2.599-1M12 16c1.11 0 2.08-.402 2.599-1M15 21h3m-3 0v-3m0 3l-3-3m3 3l3-3M9 3H6m3 0v3m0-3l3 3m-3-3L6 6" /></svg>,
         },
         {
           question: "Comment puis-je obtenir une copie des images de mon examen d’imagerie médicale ?",
           answer:
             "Vous pouvez obtenir une copie de vos images sous format numérique ou sur CD directement au laboratoire après la validation du radiologue. Les résultats peuvent également être transmis à votre médecin traitant pour un suivi optimal.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>,
         },
       ],
     }
@@ -230,13 +228,7 @@ export const services :  {
         },
       ],
 
-      children: {
-        title: "Particularité en Exploration Fonctionnelle",
-        description:
-          "Nous vous offrons des services de qualité supérieure, fondés sur une expertise médicale reconnue et des équipements de dernière génération. Chaque examen est réalisé avec rigueur et précision afin de garantir des résultats fiables et un accompagnement personnalisé.",
-        link: "/exploration/qualite",
-        linkLabel: "Découvrir nos engagements qualité",
-      },
+      children: <></>,
 
       faq: [
         {
@@ -244,12 +236,14 @@ export const services :  {
             "Qu’est-ce que l’exploration fonctionnelle et pourquoi est-elle importante pour évaluer ma santé ?",
           answer:
             "L’exploration fonctionnelle est une série de tests destinés à évaluer le fonctionnement des organes vitaux comme le cœur, les poumons, le foie ou les reins. Ces examens permettent de diagnostiquer précocement des anomalies, de suivre l’évolution d’une maladie ou d’ajuster un traitement pour un meilleur suivi médical.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>,
         },
         {
           question:
             "Quels sont les tests de fonction hépatique et que peuvent-ils indiquer ?",
           answer:
             "Les tests de fonction hépatique mesurent les niveaux de différentes enzymes, protéines et substances dans le sang afin d’évaluer la santé du foie. Ils permettent de détecter des affections telles que l’hépatite, la stéatose hépatique, la cirrhose ou encore des effets secondaires médicamenteux sur le foie.",
+          Icon: () => <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>,
         },
       ],
     }
