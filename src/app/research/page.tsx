@@ -1,7 +1,13 @@
 import { navigationItems } from '@/components/common/header/data'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'La Recherche Médicale | Laboratoire Sion',
+  description: 'Découvrez notre futur moteur de recherche intelligent pour trouver rapidement les examens, services médicaux et informations de santé dont vous avez besoin au Laboratoire Sion.',
+}
 
 const page = () => {
   const servicesLinks = navigationItems.find(item => item.title.toLowerCase() === 'services')?.links
