@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Navigator } from './Navigator';
 import Link from 'next/link';
-import { ChevronDown, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, SearchSlashIcon, X } from 'lucide-react';
 import { navigationItems } from './data';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
@@ -23,11 +23,8 @@ export const Header = () => {
           <Navigator />
           <div className='h-5 w-0.5 bg-black/50' />
           <div className='flex gap-3'>
-            <Link href='/auth/login'>
-              <Button>Connexion</Button>
-            </Link>
-            <Link href='/auth/signup' className='hidden 2xl:block'>
-              <Button variant='outline'>Créer un compte</Button>
+            <Link href='/research'>
+              <Button className='gap-3'><SearchSlashIcon /> La Recherche</Button>
             </Link>
           </div>
         </div>
@@ -97,12 +94,9 @@ export const Header = () => {
           );
         })}
 
-        <div className='mt-5 flex w-full justify-center gap-5'>
-          <Link href='/auth/login'>
-            <Button>Connexion</Button>
-          </Link>
-          <Link href='/auth/signup'>
-            <Button variant='outline'>Créer un compte</Button>
+        <div className='flex gap-3'>
+          <Link href='/research'>
+            <Button className='gap-3'><SearchSlashIcon /> La Recherche</Button>
           </Link>
         </div>
       </div>

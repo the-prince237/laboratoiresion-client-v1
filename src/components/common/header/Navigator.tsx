@@ -25,11 +25,11 @@ export const Navigator = () => {
                   {item.title}
                 </NavigationMenuLink>
               ) : (
-                <NavigationMenuTrigger className='bg-none'>{item.title}</NavigationMenuTrigger>
+                <NavigationMenuTrigger className='bg-transparent'>{item.title}</NavigationMenuTrigger>
               )}
               {item.links && (
-                <NavigationMenuContent className='min-w-2xs' asChild>
-                  <div className='flex w-full flex-col gap-2'>
+                <NavigationMenuContent className='min-w-xs' asChild>
+                  <div className='flex w-full min-w-fit flex-col gap-2'>
                     {item.links.map(({ title, Icon, link }, x) => (
                       <NavigationMenuLink
                         key={`${title}-${x}`}
