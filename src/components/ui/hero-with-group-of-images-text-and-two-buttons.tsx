@@ -5,7 +5,7 @@ import { HeroToggler } from "../home/hero";
 import { GridBackground, Spotlight } from "../blocks/spotlight-new";
 import { GridPattern } from "./grid-pattern";
 import { cn } from "@/lib/utils";
-import { Title1, Video } from "../common";
+import { Video } from "../common";
 
 function Hero() {
   return (

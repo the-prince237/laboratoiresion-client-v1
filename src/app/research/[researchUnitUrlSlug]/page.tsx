@@ -3,16 +3,15 @@ import React from 'react'
 import { researchUnits } from '../data';
 import { notFound } from 'next/navigation';
 import { Contacts, Title1 } from '@/components';
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 import { logo } from '../../../../public';
 
 interface ResearchUnitPageProps {
-  params: { researchUnitUrlSlug: string };
+  params: Promise<{ researchUnitUrlSlug: string }>;
 }
 
 export async function generateMetadata(
-  { params }: { params: Promise<any> },
-  parent?: ResolvingMetadata
+  { params }: ResearchUnitPageProps,
 ): Promise<Metadata> {
   const urlSlug = (await params).researchUnitUrlSlug;
   const unit = researchUnits.find(u => u.urlSlug === urlSlug )
@@ -118,7 +117,7 @@ export async function generateMetadata(
 }
 
 const ResearchUnitPage = async ({ params }: ResearchUnitPageProps) => {
-    const { researchUnitUrlSlug } =  params;
+    const { researchUnitUrlSlug } = await params;
     const researchUnit = researchUnits.find((item) => item.urlSlug === researchUnitUrlSlug)
 
     if(!researchUnit){
