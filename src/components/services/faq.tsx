@@ -36,7 +36,7 @@ const FAQ = ({ faqs }: { faqs: FaqItem[]}) => {
                 <Icon className='text-primary min-w-[24px]' size={24} />
                 {question}
               </h3>
-              {opened === index && <h1>{answer}</h1>}
+              {opened === index && <p>{answer}</p>}
             </div>
 
             <div className='relative h-5 min-w-5 cursor-pointer'>

@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Navigator } from './Navigator';
 import Link from 'next/link';
-import { ChevronDown, Menu, SearchSlashIcon, X } from 'lucide-react';
+import { ChevronDown, Dna, Menu, X } from 'lucide-react';
 import { navigationItems } from './data';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
@@ -24,7 +24,7 @@ export const Header = () => {
           <div className='h-5 w-0.5 bg-black/50' />
           <div className='flex gap-3'>
             <Link href='/research'>
-              <Button className='gap-3'><SearchSlashIcon /> La Recherche</Button>
+              <Button className='gap-3 text-lg font-extralight'><Dna /> La <u>Recherche</u> <span className='font-bold'>Scientifique</span> </Button>
             </Link>
           </div>
         </div>
@@ -39,9 +39,10 @@ export const Header = () => {
         </div>
       </div>
 
+      {opened && <div className='w-screen h-screen absolute left-0 bg-black/20' onClick={() => setOpened(false)} />}
       <div
         className={cn(
-          'padded-x absolute top-40 z-50 m-auto flex flex-1 -translate-y-[200vh] flex-col overflow-hidden rounded-2xl bg-white/70 py-5 pt-10 shadow-2xl backdrop-blur-2xl xl:hidden',
+          'padded-x absolute top-30 w-screen md:w-auto max-h-[80vh] md:right-5 z-50 m-auto flex flex-1 -translate-y-[200vh] flex-col overflow-hidden  md:rounded-2xl bg-white/70 py-5 pt-10 shadow-2xl backdrop-blur-2xl xl:hidden',
           { 'translate-y-0': opened },
         )}
       >
@@ -50,14 +51,16 @@ export const Header = () => {
             <div
               key={index}
               className='hover:text-primary cursor-pointer'
-              onClick={() =>
-                link
-                  ? router.push(link)
-                  : setOpenenedSubMenu((osm) => (osm !== title ? title : null))
-              }
+              onClick={() =>{
+                if(link) {
+                  router.push(link);
+                  setOpened(false)
+                } else {
+                  setOpenenedSubMenu((osm) => (osm !== title ? title : null))
+                }
+              }}
             >
               <div
-                key={title}
                 className={cn(
                   'flex justify-between border-b-[1px] border-solid border-gray-200 px-3 py-5 hover:bg-gray-100/70',
                 )}
@@ -81,6 +84,7 @@ export const Header = () => {
                       <Link
                         href={linkLink}
                         key={linkTitle}
+                        onClick={() => setOpened(false)}
                         className='flex items-center gap-3 border-l-[1px] border-solid border-gray-200 px-3 py-4 hover:bg-gray-100/70'
                       >
                         <LinkIcon />
@@ -94,9 +98,9 @@ export const Header = () => {
           );
         })}
 
-        <div className='flex gap-3'>
-          <Link href='/research'>
-            <Button className='gap-3'><SearchSlashIcon /> La Recherche</Button>
+        <div className='flex gap-3 w-full py-5'>
+          <Link onClick={() => setOpened(false)} href='/research' className='w-full'>
+            <Button className='gap-3 w-full font-extralight sm:text-lg'><Dna /> La <u>Recherche</u> <span className='font-bold'>Scientifique</span> </Button>
           </Link>
         </div>
       </div>

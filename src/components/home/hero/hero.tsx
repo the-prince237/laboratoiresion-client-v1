@@ -1,6 +1,6 @@
 import { MoveRight, PhoneCall } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Badge, Button, GridBackground, GridPattern, Spotlight, Video } from "../../";
+import { Badge, Button, GridBackground, GridPattern, Spotlight, Title1, Video } from "../../";
 import { HeroToggler } from "./components";
 
 export function HomeHero() {
@@ -35,9 +35,9 @@ export function HomeHero() {
                 "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
               )}/>
             <div className="flex gap-8 padded-x flex-col">
-              <h1 className="text-5xl md:text-7xl tracking-tighter text-left font-regular">
+              <Title1 className="text-5xl md:text-7xl tracking-tighter text-left font-regular">
                 Analyses <b className="font-black">Biologiques</b>  et Imagerie <b className="font-black text-orange">Médicale</b>.
-              </h1>
+              </Title1>
               <div className="w-full flex flex-col gap-4">
                 <Badge className="w-fit bg-white/50 backdrop-blur-xl" variant="outline">Je suis ...</Badge>
                 <div className="flex flex-col gap-4">

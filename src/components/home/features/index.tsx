@@ -4,6 +4,7 @@ import { motion, HTMLMotionProps, Variants } from "framer-motion"
 import { Microscope, Zap, Shield, Users } from "lucide-react"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
+import { Title1 } from "@/components/common";
 
 interface GradientTextProps
   extends Omit<React.HTMLAttributes<HTMLElement>, keyof HTMLMotionProps<"span">> {
@@ -151,12 +152,12 @@ function LaboratoireSionFeatures() {
             </motion.h2>
           </ContainerAnimated>
           <ContainerAnimated>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <Title1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Découvrez ce qui distingue{" "}
               <GradientText className="text-4xl md:text-5xl lg:text-6xl font-bold">
                 Laboratoire Sion
               </GradientText>
-            </h1>
+            </Title1>
           </ContainerAnimated>
           <ContainerAnimated>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">

@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { Title1 } from '../common';
 
 export const Contacts = () => {
   const [, setHoveredIndex] = useState<number | null>(null);
@@ -92,11 +93,11 @@ export const Contacts = () => {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
+          <Title1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             <span className="bg-gradient-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
               Contactez Nous
             </span>
-          </h1>
+          </Title1>
           
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
             Rejoignez notre communauté de partenaires et de patients reconnaissants, et restez connectés à toutes nous mises à jour.
