@@ -2,6 +2,7 @@ import { ToolCase } from "lucide-react";
 import { ServiceCardProps } from "../types";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const ServiceCard = ({
   title = 'LinkedIn',
@@ -19,7 +20,7 @@ const ServiceCard = ({
   }, []);
 
   return (
-    <a
+    <Link
       key={title}
       href={link}
       className={`group relative transition-all duration-700 ${
@@ -98,7 +99,7 @@ const ServiceCard = ({
         {/* Shimmer Effect */}
         <div className='absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/5 to-transparent transition-transform duration-1000 group-hover:translate-x-full'></div>
       </div>
-    </a>
+    </Link>
   );
 };
 

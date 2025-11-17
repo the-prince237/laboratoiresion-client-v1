@@ -7,6 +7,8 @@ import { services, ServiceTag } from "./data";
 import ServiceCard from "./service-card";
 import FAQ from "./faq";
 
+export * from './expansion-hero'
+
 export function ServiceHero() {
   const serviceTag = useParams().serviceTag as ServiceTag;
   const { title, description, images } = services.find(s => s.tag === serviceTag)!;
