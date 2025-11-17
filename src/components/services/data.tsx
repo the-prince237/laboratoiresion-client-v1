@@ -56,42 +56,42 @@ export const services :  {
           description:
             "L‘immuno-sérologie étudie la manière dont notre système immunitaire réagit face aux infections et aux maladies. Les tests immuno-sérologiques permettent de détecter la présence d’anticorps ou d’antigènes dans le sang, ce qui aide à diagnostiquer les maladies infectieuses, les allergies et les troubles auto-immuns.",
           image: "https://plus.unsplash.com/premium_photo-1675032317511-a26fa3c5124e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=715",
-          link: "/examens/immuno-serologie",
+          link: "/exams/immuno_serology",
         },
         {
           title: "Hématologie",
           description:
             "L’hématologie se concentre sur l’étude du sang et des maladies qui lui sont associées. Les analyses hématologiques permettent d’évaluer la composition du sang, de détecter des troubles de la coagulation et des maladies comme l’anémie ou la leucémie.",
           image: "https://images.unsplash.com/photo-1642697552227-ca21f326fe41?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1562",
-          link: "/examens/hematologie",
+          link: "/exams/hematology",
         },
         {
           title: "Bactériologie",
           description:
             "La bactériologie est la branche de la microbiologie qui se focalise sur l’identification des bactéries responsables d’infections. Les analyses bactériologiques aident à identifier les germes responsables d’infections et à déterminer quels antibiotiques sont efficaces pour les combattre.",
           image: "https://images.unsplash.com/photo-1631824687534-f642fc820d54?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=817",
-          link: "/examens/bacteriologie",
+          link: "/exams/microbio_parasitology",
         },
         {
           title: "Parasitologie",
           description:
             "La parasitologie étudie les parasites et leur rôle dans les maladies humaines. Les analyses parasitologiques permettent de détecter la présence de parasites dans le corps et de diagnostiquer des maladies telles que le paludisme et les infections parasitaires intestinales.",
           image: "https://plus.unsplash.com/premium_photo-1673288398662-6865a9cb3924?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687s",
-          link: "/examens/parasitologie",
+          link: "/exams/microbio_parasitology",
         },
         {
           title: "Biochimie",
           description:
             "La biochimie médicale se penche sur l’étude des processus biochimiques dans le corps. Les analyses biochimiques évaluent les niveaux de différentes substances dans le sang, ce qui peut aider à diagnostiquer des problèmes métaboliques, rénaux, hépatiques et endocriniens.",
           image: "https://images.unsplash.com/photo-1745237497721-5e6c13a171ac?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1632",
-          link: "/examens/biochimie",
+          link: "/exams/blood_biochemistry",
         },
         {
           title: "Examens spécialisés",
           description:
             "Les examens spécialisés regroupent une série d’analyses avancées qui permettent d’évaluer des aspects spécifiques de la santé, comme les dosages hormonaux, les marqueurs tumoraux, etc.",
           image: "https://images.unsplash.com/photo-1666887360742-974c8fce8e6b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
-          link: "/examens/specialises",
+          link: "/exams/special_exams",
         },
       ],
 
@@ -148,14 +148,14 @@ export const services :  {
           description:
             "La radiographie numérique est une technique d’imagerie médicale qui utilise des rayons X pour produire des images détaillées de l’intérieur du corps. Contrairement à la radiographie conventionnelle, la radiographie numérique utilise des capteurs électroniques pour enregistrer les images, offrant ainsi une meilleure qualité d’image, une réduction de la dose de rayonnement et la possibilité de manipuler les images pour une interprétation plus précise. Cet examen est couramment utilisé pour diagnostiquer les fractures osseuses, les infections, les tumeurs et d’autres affections médicales.",
           image: "https://images.unsplash.com/photo-1616012480717-fd9867059ca0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1025",
-          link: "/imagerie/radiographie-numerique",
+          link: "/exams/radiology",
         },
         {
           title: "Échographie Doppler",
           description:
             "L’échographie Doppler est une modalité d’échographie spécialisée qui permet d’évaluer le flux sanguin à l’intérieur des vaisseaux sanguins et du cœur. En utilisant des ondes sonores à haute fréquence, l’échographie Doppler détecte et mesure la vitesse et la direction du flux sanguin, ce qui permet d’évaluer la circulation sanguine, de détecter les obstructions, les sténoses et les anomalies vasculaires, et d’assister à la planification de procédures médicales telles que la chirurgie vasculaire. Cette technique est précieuse pour l’évaluation des maladies cardiovasculaires, des troubles circulatoires et des pathologies vasculaires.",
           image: "https://plus.unsplash.com/premium_photo-1702598707354-e198002d59b0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
-          link: "/imagerie/echographie-doppler",
+          link: "/exams/echography",
         },
       ],
 
@@ -210,21 +210,21 @@ export const services :  {
           description:
             "L’électrocardiogramme, communément appelé ECG, est un examen non invasif qui enregistre l’activité électrique du cœur. Cet examen permet d’évaluer le rythme cardiaque, de détecter d’éventuelles anomalies cardiaques et de diagnostiquer des problèmes tels que les arythmies, les maladies coronariennes et les troubles de la conduction cardiaque. L’ECG est une procédure rapide, indolore et essentielle pour évaluer la santé du cœur.",
           image: "https://plus.unsplash.com/premium_photo-1671874971772-ec1943fac43d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
-          link: "/exploration/electrocardiogramme",
+          link: "#",
         },
         {
           title: "Échographie cardiaque",
           description:
             "L’échographie cardiaque, également connue sous le nom d’échocardiographie, est une technique d’imagerie médicale utilisée pour visualiser les structures et le fonctionnement du cœur. Cet examen utilise des ondes sonores pour produire des images en temps réel du cœur, permettant ainsi d’évaluer la taille des cavités cardiaques, la fonction des valves cardiaques, la force de contraction du muscle cardiaque et la circulation sanguine. L’échographie cardiaque est un outil précieux pour diagnostiquer les maladies cardiaques et évaluer la fonction cardiaque.",
           image: "https://plus.unsplash.com/premium_photo-1702598687286-6e013884c30b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1470",
-          link: "/exploration/echographie-cardiaque",
+          link: "#",
         },
         {
           title: "Exploration fonctionnelle",
           description:
             "L’exploration fonctionnelle regroupe un ensemble d’examens et de tests spécialisés visant à évaluer la fonctionnalité des organes et des systèmes vitaux tels que le cœur, les poumons, le foie et les reins. Ces examens peuvent inclure l’électrocardiogramme, la spirométrie, les tests de la fonction hépatique, les tests de la fonction rénale, et d’autres évaluations spécifiques. L’exploration fonctionnelle permet de détecter les anomalies, de surveiller la santé des organes et de contribuer au diagnostic et au suivi des maladies cardiovasculaires, respiratoires, hépatiques et rénales.",
           image: "https://images.unsplash.com/photo-1618245596888-2fa0c17d4cec?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1889",
-          link: "/exploration/fonctionnelle",
+          link: "#",
         },
       ],
 

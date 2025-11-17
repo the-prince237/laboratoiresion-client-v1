@@ -4,11 +4,10 @@ import { researchUnits } from '../data';
 import { notFound } from 'next/navigation';
 import { Contacts, Title1 } from '@/components';
 import { Metadata } from 'next';
-import { logo } from '../../../../public';
+import { logo } from '../../../../../public';
+import type { PageProps } from '@/types';
 
-interface ResearchUnitPageProps {
-  params: Promise<{ researchUnitUrlSlug: string }>;
-}
+type ResearchUnitPageProps = PageProps<{ researchUnitUrlSlug: string }>;
 
 export async function generateMetadata(
   { params }: ResearchUnitPageProps,
