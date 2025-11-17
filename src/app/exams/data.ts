@@ -784,83 +784,83 @@ export const examsByCategories: ExamCategory[] = [
     tag: "radiology",
     label: "Radiologies",
     columns: [
-      { tag: "exam", label: "Examens" },
+      { tag: "name", label: "Examens" },
       { tag: "cession_price", label: "Prix cession" }
     ],
     exams: [
-      { exam: "Radio thorax (face)", cession_price: 9000 },
-      { exam: "Radio des 2 pieds (F/P)", cession_price: 22000 },
+      { name: "Radio thorax (face)", cession_price: 9000 },
+      { name: "Radio des 2 pieds (F/P)", cession_price: 22000 },
 
-      { exam: "Radio thorax (F/P)", cession_price: 15000 },
-      { exam: "Radio de la cheville (F/P)", cession_price: 12000 },
+      { name: "Radio thorax (F/P)", cession_price: 15000 },
+      { name: "Radio de la cheville (F/P)", cession_price: 12000 },
 
-      { exam: "Radio abdomen sans préparation (ASP)", cession_price: 9000 },
-      { exam: "Radio des 2 chevilles (F/P)", cession_price: 22000 },
+      { name: "Radio abdomen sans préparation (ASP)", cession_price: 9000 },
+      { name: "Radio des 2 chevilles (F/P)", cession_price: 22000 },
 
-      { exam: "Radio rachis cervical (F/P)", cession_price: 15000 },
-      { exam: "Radio jambe (F/P)", cession_price: 12000 },
+      { name: "Radio rachis cervical (F/P)", cession_price: 15000 },
+      { name: "Radio jambe (F/P)", cession_price: 12000 },
 
-      { exam: "Radio rachis cervical (F/P, 3/4)", cession_price: 22000 },
-      { exam: "Radio des 2 jambes (F/P)", cession_price: 22000 },
+      { name: "Radio rachis cervical (F/P, 3/4)", cession_price: 22000 },
+      { name: "Radio des 2 jambes (F/P)", cession_price: 22000 },
 
-      { exam: "Radio rachis dorsal (F/P)", cession_price: 18000 },
-      { exam: "Radio du genou (F/P)", cession_price: 15000 },
+      { name: "Radio rachis dorsal (F/P)", cession_price: 18000 },
+      { name: "Radio du genou (F/P)", cession_price: 15000 },
 
-      { exam: "Radio rachis lombaire (F/P)", cession_price: 15000 },
-      { exam: "Radio des 2 genoux (F/P)", cession_price: 22000 },
+      { name: "Radio rachis lombaire (F/P)", cession_price: 15000 },
+      { name: "Radio des 2 genoux (F/P)", cession_price: 22000 },
 
-      { exam: "Radio rachis lombaire (F/P, 3/4)", cession_price: 22000 },
-      { exam: "Radio du fémur (F/P)", cession_price: 12000 },
+      { name: "Radio rachis lombaire (F/P, 3/4)", cession_price: 22000 },
+      { name: "Radio du fémur (F/P)", cession_price: 12000 },
 
-      { exam: "Radio du crâne (F/P)", cession_price: 15000 },
-      { exam: "Radio des 2 fémurs (F/P)", cession_price: 22000 },
+      { name: "Radio du crâne (F/P)", cession_price: 15000 },
+      { name: "Radio des 2 fémurs (F/P)", cession_price: 22000 },
 
-      { exam: "Radio des sinus", cession_price: 12000 },
-      { exam: "Radio de la hanche (F/3/4)", cession_price: 15000 },
+      { name: "Radio des sinus", cession_price: 12000 },
+      { name: "Radio de la hanche (F/3/4)", cession_price: 15000 },
 
-      { exam: "Radio de la main (F/P)", cession_price: 12000 },
-      { exam: "Radio du bassin (Face)", cession_price: 12000 },
+      { name: "Radio de la main (F/P)", cession_price: 12000 },
+      { name: "Radio du bassin (Face)", cession_price: 12000 },
 
-      { exam: "Radio des 2 mains (F/P)", cession_price: 22000 },
-      { exam: "Radio du bassin (Face et hanche D ou G en 3/4)", cession_price: 18000 },
+      { name: "Radio des 2 mains (F/P)", cession_price: 22000 },
+      { name: "Radio du bassin (Face et hanche D ou G en 3/4)", cession_price: 18000 },
 
-      { exam: "Radio du poignet (F/P)", cession_price: 12000 },
-      { exam: "Radio du bassin (Face et 2 hanches en 3/4)", cession_price: 26000 },
+      { name: "Radio du poignet (F/P)", cession_price: 12000 },
+      { name: "Radio du bassin (Face et 2 hanches en 3/4)", cession_price: 26000 },
 
-      { exam: "Radio des 2 poignets (F/P)", cession_price: 22000 },
-      { exam: "Radio du rachis dorso lombaire (F/P)", cession_price: 30000 },
+      { name: "Radio des 2 poignets (F/P)", cession_price: 22000 },
+      { name: "Radio du rachis dorso lombaire (F/P)", cession_price: 30000 },
 
-      { exam: "Radio avant-bras (F/P)", cession_price: 12000 },
-      { exam: "Radio axiale de la rotule", cession_price: 12000 },
+      { name: "Radio avant-bras (F/P)", cession_price: 12000 },
+      { name: "Radio axiale de la rotule", cession_price: 12000 },
 
-      { exam: "Radio des 2 avant-bras (F/P)", cession_price: 22000 },
-      { exam: "Radio des pieds en charge (mesure) (F/P)", cession_price: 15000 },
+      { name: "Radio des 2 avant-bras (F/P)", cession_price: 22000 },
+      { name: "Radio des pieds en charge (mesure) (F/P)", cession_price: 15000 },
 
-      { exam: "Radio du coude (F/P)", cession_price: 12000 },
-      { exam: "Radio du cavum de profil", cession_price: 12000 },
+      { name: "Radio du coude (F/P)", cession_price: 12000 },
+      { name: "Radio du cavum de profil", cession_price: 12000 },
 
-      { exam: "Radio des 2 coudes (F/P)", cession_price: 22000 },
-      { exam: "Radio cervico-dorsal (F/P)", cession_price: 30000 },
+      { name: "Radio des 2 coudes (F/P)", cession_price: 22000 },
+      { name: "Radio cervico-dorsal (F/P)", cession_price: 30000 },
 
-      { exam: "Radio du bras (F/P)", cession_price: 12000 },
-      { exam: "Radio des 2 bras (F/P)", cession_price: 22000 },
+      { name: "Radio du bras (F/P)", cession_price: 12000 },
+      { name: "Radio des 2 bras (F/P)", cession_price: 22000 },
 
-      { exam: "Radio de l’épaule (F/P et profil de coiffe)", cession_price: 19000 },
-      { exam: "Radio de 2 épaules (F/P et profil de coiffe)", cession_price: 38000 },
+      { name: "Radio de l’épaule (F/P et profil de coiffe)", cession_price: 19000 },
+      { name: "Radio de 2 épaules (F/P et profil de coiffe)", cession_price: 38000 },
 
-      { exam: "Radio épaule (F/P)", cession_price: 15000 },
-      { exam: "Radio des 2 épaules (F/P)", cession_price: 28000 },
+      { name: "Radio épaule (F/P)", cession_price: 15000 },
+      { name: "Radio des 2 épaules (F/P)", cession_price: 28000 },
 
-      { exam: "Radio de la main gauche de face (âge osseux)", cession_price: 20000 },
-      { exam: "Hystérosalpingographie (HSG)", cession_price: 35000 },
+      { name: "Radio de la main gauche de face (âge osseux)", cession_price: 20000 },
+      { name: "Hystérosalpingographie (HSG)", cession_price: 35000 },
 
-      { exam: "Radio clavicule", cession_price: 12000 },
-      { exam: "Urographie intra-veineuse (UIV)", cession_price: 45000 },
+      { name: "Radio clavicule", cession_price: 12000 },
+      { name: "Urographie intra-veineuse (UIV)", cession_price: 45000 },
 
-      { exam: "TOGD : Transit Œsogastro-Duodénal", cession_price: 45000 },
-      { exam: "UCRM : Urocystographie rétrograde et mictionnelle", cession_price: 45000 },
+      { name: "TOGD : Transit Œsogastro-Duodénal", cession_price: 45000 },
+      { name: "UCRM : Urocystographie rétrograde et mictionnelle", cession_price: 45000 },
 
-      { exam: "TO", cession_price: 35000 }
+      { name: "TO", cession_price: 35000 }
     ]
   }
 ].map((examCategory) => ({...examCategory, columns: examCategory.columns || defaultExamCategoryColumns}));
