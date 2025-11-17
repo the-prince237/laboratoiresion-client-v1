@@ -9,6 +9,12 @@ import { useRouter } from 'next/navigation';
 import { Button } from '@/components';
 import Logo from '../logo';
 
+const ScientificResearchButton = () => (
+  <Link href='/research' className='w-full gap-3 flex font-black'>
+    <Dna /> Recherche Scientifique
+  </Link>
+)
+
 export const Header = () => {
   const [opened, setOpened] = useState(false);
   const [openedSubMenu, setOpenenedSubMenu] = useState<null | string>(null);
@@ -23,9 +29,7 @@ export const Header = () => {
           <Navigator />
           <div className='h-5 w-0.5 bg-black/50' />
           <div className='flex gap-3'>
-            <Link href='/research'>
-              <Button className='gap-3 text-lg font-extralight'><Dna /> La <u>Recherche</u> <span className='font-bold'>Scientifique</span> </Button>
-            </Link>
+            <ScientificResearchButton />
           </div>
         </div>
         <div className='relative xl:hidden'>
@@ -42,7 +46,7 @@ export const Header = () => {
       {opened && <div className='w-screen h-screen absolute left-0 bg-black/20' onClick={() => setOpened(false)} />}
       <div
         className={cn(
-          'padded-x absolute top-30 w-screen md:w-auto max-h-[80vh] md:right-5 z-50 m-auto flex flex-1 -translate-y-[200vh] flex-col overflow-hidden  md:rounded-2xl bg-white/70 py-5 pt-10 shadow-2xl backdrop-blur-2xl xl:hidden',
+          'padded-x absolute top-30 w-screen md:w-auto max-h-[80vh] md:right-5 z-50 m-auto flex flex-1 -translate-y-[200vh] flex-col overflow-hidden overflow-y-auto  md:rounded-2xl bg-white/70 py-5 pt-10 shadow-2xl backdrop-blur-2xl xl:hidden',
           { 'translate-y-0': opened },
         )}
       >
@@ -99,9 +103,7 @@ export const Header = () => {
         })}
 
         <div className='flex gap-3 w-full py-5'>
-          <Link onClick={() => setOpened(false)} href='/research' className='w-full'>
-            <Button className='gap-3 w-full font-extralight sm:text-lg'><Dna /> La <u>Recherche</u> <span className='font-bold'>Scientifique</span> </Button>
-          </Link>
+          <ScientificResearchButton />
         </div>
       </div>
     </header>
