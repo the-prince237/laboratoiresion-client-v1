@@ -8,6 +8,7 @@ import ServiceCard from "./service-card";
 import FAQ from "./faq";
 
 export * from './expansion-hero'
+export * from './data'
 
 export function ServiceHero() {
   const serviceTag = useParams().serviceTag as ServiceTag;

@@ -2,6 +2,7 @@ import React from 'react'
 import type { PageProps } from '@/types';
 import { Metadata } from 'next';
 import { examsByCategories } from '../data';
+import { metaImages } from '@/components/exams/exams-hero';
 
 type ExamCategoryPageProps = PageProps<{ examCategoryTag: string }>;
 
@@ -37,6 +38,7 @@ export const generateMetaData = async ({ params }: ExamCategoryPageProps): Promi
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-+|-+$/g, "")}`,
     siteName: "Laboratoire Sion",
+    images: metaImages,
   };
 
   const twitter = {

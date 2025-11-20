@@ -5,11 +5,20 @@ import { motion } from 'framer-motion';
 import { Download } from 'lucide-react';
 import { services } from '../services/data';
 
+
+export const examsSlideImages = [
+  ...services.map(({ images }) => images).flat(),
+  ...services.map(({ content }) => content.items.map((item) => item.image)).flat(),
+]
+
+export const metaImages = examsSlideImages.map((src) => ({
+      url: src,
+      width: 800,
+      height: 600,
+      alt: "Catalogue complet des examens médicaux | Laboratoire Sion",
+}))
+
 const ExamsHero = () => {
-  const examsSlideImages = [
-    ...services.map(({ images }) => images).flat(),
-    ...services.map(({ content }) => content.items.map((item) => item.image)).flat(),
-  ]
 
   return (
     <ImagesSlider
