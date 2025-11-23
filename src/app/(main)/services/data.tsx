@@ -1,5 +1,3 @@
-import { IconType } from "react-icons"
-
 export interface ExamItem {
   title: string
   description: string
@@ -17,7 +15,7 @@ export interface ChildSection {
 export interface FaqItem {
   question: string
   answer: string
-  Icon: IconType
+  Icon: () => React.ReactNode
 }
 
 export interface ExamensSection {

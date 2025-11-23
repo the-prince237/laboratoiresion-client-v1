@@ -1,4 +1,5 @@
 import type { ExamCategory } from "@/types";
+import { services } from "../(main)/services/data";
 
 export const defaultExamCategoryColumns = [
   { tag: "code", label: "Code" },
@@ -864,3 +865,24 @@ export const examsByCategories: ExamCategory[] = [
     ]
   }
 ].map((examCategory) => ({...examCategory, columns: examCategory.columns || defaultExamCategoryColumns}));
+
+export const examsSlideImages = [
+  ...services.map(({ images }) => images).flat(),
+  ...services.map(({ content }) => content.items.map((item) => item.image)).flat(),
+]
+
+// Optionnel : créer un tableau d'examens pour microdata/schema.org si vous voulez un SEO riche
+export const examList = examsByCategories.flatMap((category) =>
+  category.exams.map((exam) => ({
+    name: exam.exam,
+    category: category.label,
+    price: exam.cession_price || exam.unit_price || "",
+  }))
+).map((exam) => `${exam.name}`);
+
+export const metaImages = examsSlideImages.map((src) => ({
+      url: src,
+      width: 800,
+      height: 600,
+      alt: "Catalogue complet des examens médicaux | Laboratoire Sion",
+}))

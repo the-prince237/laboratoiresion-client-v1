@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Minus, PlusIcon } from 'lucide-react';
 
 import { line } from '../../../public';
-import { FaqItem } from './data';
+import { FaqItem } from '../../app/(main)/services/data';
 
 const FAQ = ({ faqs }: { faqs: FaqItem[]}) => {
   const [opened, setOpened] = useState<number | null>(0);

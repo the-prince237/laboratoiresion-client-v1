@@ -5,9 +5,9 @@ import { notFound } from 'next/navigation';
 import { Contacts, Title1 } from '@/components';
 import { Metadata } from 'next';
 import { logo } from '../../../../../public';
-import type { PageProps } from '@/types';
+import type { CustomPageProps } from '@/types';
 
-type ResearchUnitPageProps = PageProps<{ researchUnitUrlSlug: string }>;
+type ResearchUnitPageProps = CustomPageProps<{ researchUnitUrlSlug: string }>;
 
 export async function generateMetadata(
   { params }: ResearchUnitPageProps,
