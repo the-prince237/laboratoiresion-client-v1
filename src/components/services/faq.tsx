@@ -33,7 +33,7 @@ const FAQ = ({ faqs }: { faqs: FaqItem[]}) => {
 
             <div className='flex w-full flex-col gap-3 lg:gap-3.5 xl:gap-5'>
               <h3 className='flex items-center gap-4 text-lg font-medium lg:text-xl xl:text-[22px]'>
-                <Icon className='text-primary min-w-[24px]' size={24} />
+                <Icon />
                 {question}
               </h3>
               {opened === index && <p>{answer}</p>}
