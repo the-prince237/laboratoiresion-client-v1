@@ -6,6 +6,7 @@ export default function Home() {
       <HomeHero />
       <HomeStats />
       <Features />
+      {/* TO DO : PARTNERS */}
       <Contacts />
       <Testimonials />
     </main>

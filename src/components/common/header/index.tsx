@@ -6,7 +6,6 @@ import { ChevronDown, Dna, Menu, X } from 'lucide-react';
 import { navigationItems } from './data';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
-import { Button } from '@/components';
 import Logo from '../logo';
 
 const ScientificResearchButton = () => (

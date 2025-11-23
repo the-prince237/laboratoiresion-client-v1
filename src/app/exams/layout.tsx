@@ -1,21 +1,11 @@
 import React from 'react'
-import { Contacts, ExamsContent, ExamsSidebar, Footer, Header, MobileSidebarDrawer } from '@/components'
+import { ContentLayout } from '@/components'
 import { Metadata } from "next";
-import { examsByCategories } from "./data";
-import { metaImages } from "@/components/exams/exams-hero";
+import { examList, examsByCategories, examsSlideImages, metaImages } from "./data";
 
+export const generateMetaData = async () => {
 
-// Optionnel : créer un tableau d'examens pour microdata/schema.org si vous voulez un SEO riche
-const examList = examsByCategories.flatMap((category) =>
-  category.exams.map((exam) => ({
-    name: exam.exam,
-    category: category.label,
-    price: exam.cession_price || exam.unit_price || "",
-  }))
-);
-
-
-export const metadata : Metadata = {
+  return ({
   title: "Catalogue complet des examens médicaux | Laboratoire Sion",
   description: "Explorez notre catalogue complet d'analyses et examens médicaux au Laboratoire Sion : biologie, biochimie, immunologie, hématologie, bactériologie, endocrinologie, radiologie, échographie, biologie moléculaire, et examens spécialisés. Retrouvez les prix, délais, indications et toutes les informations pour patients et professionnels de santé.",
   keywords: [
@@ -33,7 +23,7 @@ export const metadata : Metadata = {
     "échographie",
     "biologie moléculaire",
     "examens spécialisés",
-    ...examList.map((exam) => `${exam.name}`),
+    ...examList,
   ],
   openGraph: {
     title: "Catalogue complet des examens médicaux | Laboratoire Sion",
@@ -48,21 +38,23 @@ export const metadata : Metadata = {
     title: "Catalogue complet des examens médicaux | Laboratoire Sion",
     description: "Explorez notre catalogue complet d'analyses et examens médicaux au Laboratoire Sion : biologie, biochimie, immunologie, hématologie, bactériologie, endocrinologie, radiologie, échographie, biologie moléculaire, et examens spécialisés. Retrouvez les prix, délais, indications et toutes les informations pour patients et professionnels de santé.",
   },
+})
 };
 
 const Layout = ({ children }: { children: React.ReactNode}) => {
   return (
-    <div className="flex flex-col md:flex-row min-h-screen">
-      <MobileSidebarDrawer />
-      <ExamsSidebar />
-      <Header />
-      <main className="flex-1">
-        {children}
-        <ExamsContent />
-        <Contacts />
-        <Footer />
-      </main>
-    </div>
+    <ContentLayout 
+      sidebarProps={{ title: "Catégorie", sections: examsByCategories.map(({ label, tag }) => ({
+        label, link: `/exams/${tag}#${tag}`
+      }))}}
+      contentHeroProps={{ 
+        images: examsSlideImages, 
+        title: 'Nos Examens', 
+        description: "Découvrez notre gamme complète d'examens médicaux, soigneusement organisés par catégories pour faciliter votre recherche. Que vous soyez à la recherche d'analyses de routine ou de tests spécialisés, notre plateforme vous offre un accès rapide et simple à toutes les informations nécessaires pour prendre des décisions éclairées concernant votre santé.",
+      }}
+    >
+      {children}
+    </ContentLayout>
   )
 }
 

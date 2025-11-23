@@ -1,10 +1,10 @@
 import React from 'react'
-import type { PageProps } from '@/types';
+import type { CustomPageProps } from '@/types';
 import { Metadata } from 'next';
-import { examsByCategories } from '../data';
-import { metaImages } from '@/components/exams/exams-hero';
+import { examsByCategories, metaImages } from '../data';
+import ExamsPage from '../page';
 
-type ExamCategoryPageProps = PageProps<{ examCategoryTag: string }>;
+type ExamCategoryPageProps = CustomPageProps<{ examCategoryTag: string }>;
 
 export const generateMetaData = async ({ params }: ExamCategoryPageProps): Promise<Metadata> => {
   const examCategoryTag = (await params).examCategoryTag
@@ -57,10 +57,8 @@ export const generateMetaData = async ({ params }: ExamCategoryPageProps): Promi
 };
 
 
-const page = async ({params}: ExamCategoryPageProps) => {
-  const examCategoryTag = (await params).examCategoryTag;
-
-  return <a href={`#${examCategoryTag}`} className="hidden">scroll</a>;
+const page = () => {
+  return <ExamsPage />
 
 }
 

@@ -1,3 +1,3 @@
-export type PageProps<ParamsType> = {
+export type CustomPageProps<ParamsType> =  {
   params: Promise<ParamsType>;
 };
