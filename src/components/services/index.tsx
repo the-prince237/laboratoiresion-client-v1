@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./expansion-hero";
 import { useParams } from "next/navigation";
-import { services, ServiceTag } from "./data";
+import { services, ServiceTag } from "../../app/(main)/services/data";
 import ServiceCard from "./service-card";
 import FAQ from "./faq";
 
 export * from './expansion-hero'
-
 export function ServiceHero() {
   const serviceTag = useParams().serviceTag as ServiceTag;
   const { title, description, images } = services.find(s => s.tag === serviceTag)!;

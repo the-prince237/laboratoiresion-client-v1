@@ -69,7 +69,7 @@ export const Contacts = () => {
   ];
 
   return (
-    <div className="min-h-screen py-25 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative w-full">
+    <div id='contacts' className="min-h-screen py-25 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative w-full">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>

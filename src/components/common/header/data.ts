@@ -3,6 +3,11 @@ import { BiHealth } from 'react-icons/bi';
 import { FaUserDoctor } from 'react-icons/fa6';
 
 export const navigationItems = [
+  // {
+  //   title: 'Rencontrer Nos Médecins Partenaires',
+  //   link: '/partners/prescribers',
+  //   Icon: FaUserDoctor,
+  // }, TO DO : handle Partners Page
   {
     Icon: List,
     title: 'Services',
@@ -29,18 +34,13 @@ export const navigationItems = [
     Icon: BiHealth,
     links: [
       {
-        title: 'Rencontrer Nos Médecins Partenaires',
-        link: '/doctors',
-        Icon: FaUserDoctor,
-      },
-      {
         title: 'Conseil De La Semaine',
-        link: '/blogs/weekly-advice/latest',
+        link: '/blogs/weekly-advice',
         Icon: Package,
       },
       {
         title: 'Préparer Ma Visite',
-        link: '/patient/visit-us',
+        link: '/visit-us',
         Icon: ListFilter,
       },
     ],
@@ -51,17 +51,17 @@ export const navigationItems = [
     links: [
       {
         title: 'Devenir Partenaire',
-        link: '/professionals/become-a-partner',
+        link: '#contacts',
         Icon: PlusCircle,
       },
       {
         title: "Manuel De Prélèvements",
-        link: '/professionals/sampling-manual',
+        link: '/exams',
         Icon: Gift,
       },
       {
         title: 'Quoi de Neuf SION ?',
-        link: '/blogs/quoi-de-neuf-sion/latest',
+        link: '/blogs/quoi-de-neuf-sion',
         Icon: Newspaper,
       }
     ]
@@ -79,11 +79,11 @@ export const navigationItems = [
   {
     title: "Contactez Nous",
     Icon: Phone,
-    link: '/contacts'
+    link: '#contacts'
   },
-  {
-    title: "À Propos",
-    Icon: Menu,
-    link: '/about'
-  }
+  // {
+  //   title: "Notre Histoire",
+  //   Icon: Menu,
+  //   link: '/about'
+  // } TO DO : WORK ON OUR STORY SECTION
 ];
