@@ -3,6 +3,11 @@ import { BiHealth } from 'react-icons/bi';
 import { FaUserDoctor } from 'react-icons/fa6';
 
 export const navigationItems = [
+  // {
+  //   title: 'Rencontrer Nos Médecins Partenaires',
+  //   link: '/partners/prescribers',
+  //   Icon: FaUserDoctor,
+  // }, TO DO : handle Partners Page
   {
     Icon: List,
     title: 'Services',
