@@ -21,8 +21,9 @@ export const Header = () => {
   return (
     <header className='fixed z-[1000] m-auto flex h-fit w-full flex-col items-end font-sans'>
       <div className='z-100 relative flex min-h-16 w-full items-center justify-between bg-white/50 px-5 py-4 border-gray-200 border-0 border-b-[1px] border-solid backdrop-blur-lg'>
-        <Link href='/'>
+        <Link className='flex items-center gap-3 bg-gray-100 hover:bg-gray-200 p-2 pr-12 rounded-full' href='/'>
           <Logo />
+          <span className='font-bold'>Accueil</span>
         </Link>
         <div className='hidden items-center gap-5 xl:flex'>
           <Navigator />

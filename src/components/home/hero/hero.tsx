@@ -2,6 +2,7 @@ import { MoveRight, PhoneCall } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Badge, Button, GridBackground, GridPattern, Spotlight, Title1, Video } from "../../";
 import { HeroToggler } from "./components";
+import Link from "next/link";
 
 export function HomeHero() {
   return (
@@ -43,16 +44,11 @@ export function HomeHero() {
                 <div className="flex flex-col gap-4">
                   <HeroToggler />
                 </div>
-              </div>
-            </div>
 
-            <div className="flex padded-x flex-row gap-4">
-              <Button size="lg" className="gap-4 bg-secondary text-white backdrop-blur-xl" variant="outline">
-                Jump on a call <PhoneCall className="w-4 h-4" />
-              </Button>
-              <Button size="lg" className="gap-4">
-                Sign up here <MoveRight className="w-4 h-4" />
-              </Button>
+                <Link href="#contacts" className="px-6 py-2 bg-secondary text-white font-black flex justify-center items-center gap-5 rounded-md" >
+                  Contactez Nous <PhoneCall className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
           </div>
           <div className="grid padded-x grid-cols-2 gap-4 xl:gap-8">

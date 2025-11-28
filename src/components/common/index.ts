@@ -4,3 +4,4 @@ export * from './footer';
 export * from './video';
 export * from './fonts'
 export * from './layouts'
+export * from './responsive-pdf-reader';
