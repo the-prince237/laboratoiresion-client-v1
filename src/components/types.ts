@@ -13,3 +13,20 @@ export type ServiceCardProps = {
   link: string;
   description: string;
 };
+
+export type BlogSectionProps = {
+   label: string;
+  tag: string;
+  articles?: {
+      type: string;
+      title: string;
+      tag: string;
+      pdfPath: string;
+      image: string;
+      number: number;
+      date: string;
+      pages: number;
+      timeToRead: string;
+      resume: string;
+  }[];
+}

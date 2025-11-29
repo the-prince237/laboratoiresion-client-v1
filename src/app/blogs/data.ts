@@ -1,8 +1,7 @@
-export const blogSections = [
-  {
-    label: "Quoi de neuf SION ?",
-    tag: 'quoi-de-neuf-sion',
-    articles : [
+import { BlogSectionProps } from "@/components/types"
+
+const allArticles = {
+  quoiDeNeufSion: [
       {
         type: "pdf",
         title: "Biochimie du Sperme",
@@ -136,9 +135,21 @@ export const blogSections = [
         resume: "Si la mesure du PSA total est déterminante, l'évaluation du rapport PSA libre/PSA total donne une meilleure orientation diagnostique pour le dépistage du cancer de la prostate."
       }
   ],
+}
+
+export const blogSections: BlogSectionProps[] = [
+  {
+    label: "Quoi de neuf SION ?",
+    tag: 'quoi-de-neuf-sion',
+    articles : allArticles.quoiDeNeufSion
   },
   {
     label: "Conseils De La Semaine",
     tag: 'weekly-advice'
+  },
+  {
+    label: "Actualités Médicales",
+    tag: 'news',
+    articles: [...allArticles.quoiDeNeufSion].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6)
   }
 ]
