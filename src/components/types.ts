@@ -15,8 +15,9 @@ export type ServiceCardProps = {
 };
 
 export type BlogSectionProps = {
-   label: string;
+  label: string;
   tag: string;
+  Icon: IconType,
   articles?: {
       type: string;
       title: string;

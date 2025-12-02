@@ -1,4 +1,6 @@
 import { BlogSectionProps } from "@/components/types"
+import { BiQuestionMark } from "react-icons/bi"
+import { GiGuards, GiLetterBomb } from "react-icons/gi"
 
 const allArticles = {
   quoiDeNeufSion: [
@@ -141,15 +143,18 @@ export const blogSections: BlogSectionProps[] = [
   {
     label: "Quoi de neuf SION ?",
     tag: 'quoi-de-neuf-sion',
-    articles : allArticles.quoiDeNeufSion
+    articles : allArticles.quoiDeNeufSion,
+    Icon: BiQuestionMark
   },
   {
     label: "Conseils De La Semaine",
-    tag: 'weekly-advice'
+    tag: 'weekly-advice',
+    Icon: GiGuards
   },
   {
     label: "Actualités Médicales",
     tag: 'news',
-    articles: [...allArticles.quoiDeNeufSion].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6)
+    articles: [...allArticles.quoiDeNeufSion].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 6),
+    Icon: GiLetterBomb
   }
 ]

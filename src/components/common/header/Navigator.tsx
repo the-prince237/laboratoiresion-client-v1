@@ -28,7 +28,7 @@ export const Navigator = () => {
                 <NavigationMenuTrigger className='bg-transparent'>{item.title}</NavigationMenuTrigger>
               )}
               {item.links && (
-                <NavigationMenuContent className='min-w-xs' asChild>
+                <NavigationMenuContent className='min-w-md' asChild>
                   <div className='flex w-full min-w-fit flex-col gap-2'>
                     {item.links.map(({ title, Icon, link }, x) => (
                       <NavigationMenuLink

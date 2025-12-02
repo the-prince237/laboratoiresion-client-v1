@@ -1,3 +1,4 @@
+import { blogSections } from '@/app/blogs/data';
 import { Building, Dna, Gift, List, ListFilter, Menu, Newspaper, Package, Phone, PlusCircle, PlusSquare, Scan, SearchX } from 'lucide-react';
 import { BiHealth } from 'react-icons/bi';
 import { FaUserDoctor } from 'react-icons/fa6';
@@ -67,14 +68,18 @@ export const navigationItems = [
     ]
   },
   {
+    title: "Blog",
+    Icon: Newspaper,
+    links: blogSections.map(({label, tag, Icon}) => ({
+      title: label,
+      link: `/blogs/tag`,
+      Icon
+    }))
+  },
+  {
     title: "Nos Agences",
     Icon: Building,
     link: '/our-agencies'
-  },
-  {
-    title: "Actualités",
-    Icon: Newspaper,
-    link: '/blogs/news'
   },
   {
     title: "Contactez Nous",
