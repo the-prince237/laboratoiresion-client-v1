@@ -72,7 +72,7 @@ export const navigationItems = [
     Icon: Newspaper,
     links: blogSections.map(({label, tag, Icon}) => ({
       title: label,
-      link: `/blogs/tag`,
+      link: `/blogs/${tag}`,
       Icon
     }))
   },
