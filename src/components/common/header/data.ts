@@ -2,6 +2,7 @@ import { blogSections } from '@/app/blogs/data';
 import { Building, Dna, Gift, List, ListFilter, Menu, Newspaper, Package, Phone, PlusCircle, PlusSquare, Scan, SearchX } from 'lucide-react';
 import { BiHealth } from 'react-icons/bi';
 import { FaUserDoctor } from 'react-icons/fa6';
+import { GiDoctorFace } from 'react-icons/gi';
 
 export const navigationItems = [
   // {
@@ -75,6 +76,11 @@ export const navigationItems = [
       link: `/blogs/${tag}`,
       Icon
     }))
+  },
+  {
+    title: "Nox Examens",
+    Icon: GiDoctorFace,
+    link: "/exams"
   },
   {
     title: "Nos Agences",
