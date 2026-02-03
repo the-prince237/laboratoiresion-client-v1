@@ -41,7 +41,7 @@ export const navigationItems = [
       },
       {
         title: 'Préparer Ma Visite',
-        link: '/our-agencies',
+        link: '/our-agencies#agencies-section',
         Icon: ListFilter,
       },
     ],
