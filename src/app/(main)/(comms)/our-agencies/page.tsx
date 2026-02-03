@@ -302,13 +302,13 @@ const AgenciesSection: React.FC = () => {
               </p>
             </div>
 
-            <Tabs value={selectedCity} onValueChange={setSelectedCity} className="w-full">
+            <Tabs value={selectedCity} onValueChange={setSelectedCity} className="w-full gap-12">
               <div onClick={scrollToAgencies} ref={buttonsRef} className={cn('w-full flex justify-center', 
                 {
-                  'fixed bottom-3 lg:bottom-20 left-0 px-4': activeSection === 'agencies-section',
+                  'fixed bottom-0 bg-[#f7f7f7] py-3 items-center md:bg-transparent md:bottom-20 z-50 left-0 px-4': activeSection === 'agencies-section',
                   'relative bottom-0': activeSection !== 'agencies-section',
                 },)}>
-                <TabsList className={cn("grid w-full max-w-2xl mx-auto grid-cols-4 mb-12")}>
+                <TabsList className={cn("grid w-full max-w-2xl mx-auto grid-cols-4")}>
                   <TabsTrigger value="all">Tout</TabsTrigger>
                   {agenciesData.map((cityData) => (
                     <TabsTrigger key={cityData.city} value={cityData.city}>
@@ -347,7 +347,7 @@ const AgenciesSection: React.FC = () => {
 
 const LaboratoireSionSites: React.FC = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden relative z-10">
+    <div className="min-h-screen overflow-x-hidden relative">
       {/* Section Hero */}
       <section className="relative bg-linear-to-br from-teal-50 via-background to-teal-50/30 border-b border-border">
         <div className="container mx-auto px-4 py-20 md:py-28">
