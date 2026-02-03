@@ -1,6 +1,6 @@
-import { MoveRight, PhoneCall } from "lucide-react";
+import { PhoneCall } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Badge, Button, GridBackground, GridPattern, Spotlight, Title1, Video } from "../../";
+import { Badge, GridBackground, GridPattern, Spotlight, Title1, Video } from "../../";
 import { HeroToggler } from "./components";
 import Link from "next/link";
 
@@ -32,7 +32,7 @@ export function HomeHero() {
                 [15, 10],
               ]}
               className={cn(
-                "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+                "mask-[radial-gradient(400px_circle_at_center,white,transparent)]",
                 "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
               )}/>
             <div className="flex gap-8 padded-x flex-col">

@@ -19,8 +19,8 @@ export const Header = () => {
   const [openedSubMenu, setOpenenedSubMenu] = useState<null | string>(null);
   const router = useRouter();
   return (
-    <header className='fixed z-[1000] m-auto flex h-fit w-full flex-col items-end font-sans'>
-      <div className='z-100 relative flex min-h-16 w-full items-center justify-between bg-white/50 px-5 py-4 border-gray-200 border-0 border-b-[1px] border-solid backdrop-blur-lg'>
+    <header className='fixed z-1000 m-auto flex h-fit w-full flex-col items-end font-sans'>
+      <div className='z-100 relative flex min-h-16 w-full items-center justify-between bg-white/50 px-5 py-4 border-gray-200 border-0 border-b border-solid backdrop-blur-lg'>
         <Link className='flex items-center gap-3 bg-gray-100 hover:bg-gray-200 p-2 pr-12 rounded-full' href='/'>
           <Logo />
           <span className='font-bold'>Accueil</span>
@@ -66,7 +66,7 @@ export const Header = () => {
             >
               <div
                 className={cn(
-                  'flex justify-between border-b-[1px] border-solid border-gray-200 px-3 py-5 hover:bg-gray-100/70',
+                  'flex justify-between border-b border-solid border-gray-200 px-3 py-5 hover:bg-gray-100/70',
                 )}
               >
                 <div className='flex gap-6'>
@@ -89,7 +89,7 @@ export const Header = () => {
                         href={linkLink}
                         key={linkTitle}
                         onClick={() => setOpened(false)}
-                        className='flex items-center gap-3 border-l-[1px] border-solid border-gray-200 px-3 py-4 hover:bg-gray-100/70'
+                        className='flex items-center gap-3 border-l border-solid border-gray-200 px-3 py-4 hover:bg-gray-100/70'
                       >
                         <LinkIcon />
                         <span>{linkTitle}</span>

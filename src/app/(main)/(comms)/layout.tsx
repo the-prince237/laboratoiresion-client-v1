@@ -1,5 +1,4 @@
-import { Contacts, GridBackground, GridPattern, Spotlight } from "@/components";
-import { cn } from "@/lib";
+import { Spotlight } from "@/components";
 import { CustomLayoutProps } from "@/types";
 
 const Layout = ({ children }: CustomLayoutProps) => {

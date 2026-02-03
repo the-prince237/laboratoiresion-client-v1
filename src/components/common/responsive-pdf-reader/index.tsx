@@ -15,7 +15,7 @@ export function PDFReader({ pdfPath, title }: PDFReaderProps) {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-90 z-1001 flex flex-col">
       {/* Header */}
-      <div className="bg-gray-900 text-white px-4 h-[90px] w-full gap-3 flex items-center justify-between">
+      <div className="bg-gray-900 text-white px-4 h-22.5 w-full gap-3 flex items-center justify-between">
         <Logo />
 
         <h2 className="text-lg font-semibold flex-1">{title}</h2>

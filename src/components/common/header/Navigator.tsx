@@ -36,7 +36,7 @@ export const Navigator = () => {
                         className='flex min-w-fit flex-row items-center gap-3'
                         href={link}
                       >
-                        <Icon size={18} className='min-w-[18px]' />
+                        <Icon size={18} className='min-w-4.5' />
                         <span className='min-w-fit'>{title}</span>
                       </NavigationMenuLink>
                     ))}

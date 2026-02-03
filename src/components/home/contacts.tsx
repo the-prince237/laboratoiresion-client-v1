@@ -71,14 +71,14 @@ export const Contacts = () => {
   ];
 
   return (
-    <div id='contacts' className="min-h-screen py-25 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative w-full">
+    <div id='contacts' className="min-h-screen py-25 bg-linear-to-br from-slate-950 via-slate-900 to-slate-950 relative w-full">
       {/* Animated Background */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent"></div>
         
         {/* Animated Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
         
         {/* Floating Orbs */}
         <div className="absolute top-20 left-20 w-72 h-72 bg-blue-600/30 rounded-full blur-[128px] animate-pulse"></div>
@@ -89,14 +89,14 @@ export const Contacts = () => {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen p-8">
         {/* Header Section */}
         <div className={`text-center mb-16 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-block mb-4 px-4 py-1.5 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
-            <span className="text-sm font-medium bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+          <div className="inline-block mb-4 px-4 py-1.5 bg-linear-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
+            <span className="text-sm font-medium bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Prenez Contact
             </span>
           </div>
           
           <Title1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-            <span className="bg-gradient-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
               Contactez Nous
             </span>
           </Title1>
@@ -122,10 +122,10 @@ export const Contacts = () => {
               onMouseLeave={() => setHoveredIndex(null)}
             >
               {/* Card Container */}
-              <div className="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-2xl p-8 border border-slate-700/50 overflow-hidden transition-all duration-500 hover:scale-105 hover:border-slate-600/50">
+              <div className="relative bg-linear-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl rounded-2xl p-8 border border-slate-700/50 overflow-hidden transition-all duration-500 hover:scale-105 hover:border-slate-600/50">
                 {/* Hover Gradient Effect */}
                 <div 
-                  className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+                  className={`absolute inset-0 bg-linear-to-br ${platform.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
                 ></div>
                 
                 {/* Glow Effect */}
@@ -140,7 +140,7 @@ export const Contacts = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon Container */}
-                  <div className={`mb-4 inline-flex p-3 rounded-xl bg-gradient-to-br ${platform.gradient} text-white transform transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110`}>
+                  <div className={`mb-4 inline-flex p-3 rounded-xl bg-linear-to-br ${platform.gradient} text-white transform transition-transform duration-500 group-hover:rotate-6 group-hover:scale-110`}>
                     {platform.icon}
                   </div>
                   
@@ -169,7 +169,7 @@ export const Contacts = () => {
                 </div>
 
                 {/* Shimmer Effect */}
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/5 to-transparent"></div>
               </div>
             </a>
           ))}
@@ -178,7 +178,7 @@ export const Contacts = () => {
         {/* Bottom CTA */}
         <div className={`mt-16 w-full max-w-lg text-center transition-all duration-1000 delay-700 flex items-center gap-2 flex-col sm:flex-row ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <a className='w-full min-w-fit sm:w-1/2' href="tel:+237693056263" target="_blank" rel="noopener noreferrer">
-            <button className="group w-full relative inline-flex justify-between items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+            <button className="group w-full relative inline-flex justify-between items-center gap-2 px-8 py-3 bg-linear-to-r from-blue-600 to-purple-600 rounded-full text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
               <PhoneCall />
               <span>+237 693 056 263</span>
               <svg className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,11 +186,11 @@ export const Contacts = () => {
               </svg>
               
               {/* Button Shimmer */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
             </button>
           </a>
           <a className='w-full sm:w-1/2' href="tel:+237693056263" target="_blank" rel="noopener noreferrer">
-            <button className="group w-full justify-between relative inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-green-800  to-green-600 rounded-full text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+            <button className="group w-full justify-between relative inline-flex items-center gap-2 px-8 py-3 bg-linear-to-r from-green-800  to-green-600 rounded-full text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
               <BsWhatsapp />
               <span className="relative z-10">Whatsapp !</span>
               <svg className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -198,7 +198,7 @@ export const Contacts = () => {
               </svg>
               
               {/* Button Shimmer */}
-              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
             </button>
           </a>
 
