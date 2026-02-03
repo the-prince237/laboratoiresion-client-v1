@@ -1,11 +1,12 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Phone, Mail, MapPin, Clock, Shield, Zap, Lock, ChevronDown } from 'lucide-react';
+import { cn } from '@/lib';
 
 interface Agency {
   id: string;
@@ -23,39 +24,42 @@ interface CityAgencies {
   agencies: Agency[];
 }
 
-const agenciesData: CityAgencies[] = [
+export const agenciesData: CityAgencies[] = [
   {
     city: 'Yaoundé',
     agencies: [
       {
-        id: 'yao-1',
-        name: 'Laboratoire SION - Centre Ville',
-        address: 'Avenue Kennedy, Quartier Administratif, Yaoundé',
-        phone: ['+237 222 123 456', '+237 222 123 457'],
-        email: 'yaounde.centre@labsion.cm',
-        services: ['Blood Tests', 'Imaging', 'Microbiology', 'Biochemistry'],
-        badges: ['24/7 Service', 'Imaging Available'],
-        coordinates: { lat: 3.848, lng: 11.502 }
+        id: 'yao-melen',
+        name: 'Laboratoire SION – Melen',
+        address: 'En face de la GP Melen, Immeuble Palais des Verres, 4e étage, Yaoundé',
+        phone: ['+237 658 557 918', '+237 682 233 250'],
+        email: 'contact@laboratoiresion.org',
+        services: ['Analyses Biologiques', 'Échographie'],
+        badges: ['Imagerie Disponible'],
+        coordinates: { lat: 3.8483, lng: 11.4971 }
       },
       {
-        id: 'yao-2',
-        name: 'Laboratoire SION - Bastos',
-        address: 'Rue 1.750, Bastos, Yaoundé',
-        phone: ['+237 222 234 567'],
-        email: 'yaounde.bastos@labsion.cm',
-        services: ['Blood Tests', 'Pathology', 'Immunology'],
-        badges: ['Express Results'],
-        coordinates: { lat: 3.876, lng: 11.518 }
+        id: 'yao-mvogmbi',
+        name: 'Laboratoire SION – Mvog-Mbi',
+        address: 'Mvog-Mbi, Immeuble Afriland First Bank, Yaoundé',
+        phone: ['+237 657 203 842', '+237 676 734 261'],
+        email: 'contact@laboratoiresion.org',
+        services: [
+          'Analyses Biologiques',
+          'Imagerie Médicale',
+          'Explorations Fonctionnelles'
+        ],
+        badges: ['Plateau Technique Complet'],
+        coordinates: { lat: 3.8619, lng: 11.5186 }
       },
       {
-        id: 'yao-3',
-        name: 'Laboratoire SION - Mvan',
-        address: 'Carrefour Mvan, Yaoundé',
-        phone: ['+237 222 345 678'],
-        email: 'yaounde.mvan@labsion.cm',
-        services: ['Blood Tests', 'Biochemistry', 'Hematology'],
-        badges: [],
-        coordinates: { lat: 3.856, lng: 11.512 }
+        id: 'yao-ngousso',
+        name: 'Laboratoire SION – Ngousso',
+        address: 'Fabrique Ngousso, Immeuble RENAPROV, Yaoundé',
+        phone: ['+237 658 787 905', '+237 672 671 192'],
+        email: 'contact@laboratoiresion.org',
+        services: ['Analyses Biologiques', 'Imagerie Médicale'],
+        coordinates: { lat: 3.8931, lng: 11.5254 }
       }
     ]
   },
@@ -63,24 +67,41 @@ const agenciesData: CityAgencies[] = [
     city: 'Douala',
     agencies: [
       {
-        id: 'dla-1',
-        name: 'Laboratoire SION - Akwa',
-        address: 'Boulevard de la Liberté, Akwa, Douala',
-        phone: ['+237 233 123 456', '+237 233 123 457'],
-        email: 'douala.akwa@labsion.cm',
-        services: ['Blood Tests', 'Imaging', 'Radiology', 'Biochemistry'],
-        badges: ['24/7 Service', 'Imaging Available'],
-        coordinates: { lat: 4.051, lng: 9.767 }
+        id: 'dla-village',
+        name: 'Laboratoire SION – Village',
+        address: 'Village, au-dessus de la Pharmacie Le Temps, Douala',
+        phone: ['+237 690 760 381', '+237 651 358 274'],
+        email: 'contact@laboratoiresion.org',
+        services: ['Analyses Biologiques', 'Imagerie Médicale'],
+        coordinates: { lat: 4.0622, lng: 9.7085 }
       },
       {
-        id: 'dla-2',
-        name: 'Laboratoire SION - Bonanjo',
-        address: 'Rue Joffre, Bonanjo, Douala',
-        phone: ['+237 233 234 567'],
-        email: 'douala.bonanjo@labsion.cm',
-        services: ['Blood Tests', 'Microbiology', 'Serology'],
-        badges: ['Express Results'],
-        coordinates: { lat: 4.049, lng: 9.704 }
+        id: 'dla-bessengue',
+        name: 'Laboratoire SION – Bessengue',
+        address: 'Bessengue, Feu Rouge, à côté d’Afriland First Bank, Douala',
+        phone: ['+237 697 466 151', '+237 671 908 920'],
+        email: 'contact@laboratoiresion.org',
+        services: ['Analyses Biologiques', 'Imagerie Médicale'],
+        badges: ['Service 24h/24 – 7j/7'],
+        coordinates: { lat: 4.0469, lng: 9.7264 }
+      },
+      {
+        id: 'dla-bonaberi',
+        name: 'Laboratoire SION – Bonabéri',
+        address: 'Bonassama, Mobile Bonabéri (SODIPROVET SARL), Douala',
+        phone: ['+237 678 432 934', '+237 659 786 448'],
+        email: 'contact@laboratoiresion.org',
+        services: ['Analyses Biologiques'],
+        coordinates: { lat: 4.0906, lng: 9.6432 }
+      },
+      {
+        id: 'dla-beedi',
+        name: 'Laboratoire SION – Beedi',
+        address: 'En face de la Boulangerie Malangue, Douala',
+        phone: ['+237 670 522 162', '+237 659 158 673'],
+        email: 'contact@laboratoiresion.org',
+        services: ['Analyses Biologiques'],
+        coordinates: { lat: 4.0348, lng: 9.7512 }
       }
     ]
   },
@@ -88,49 +109,35 @@ const agenciesData: CityAgencies[] = [
     city: 'Bafoussam',
     agencies: [
       {
-        id: 'baf-1',
-        name: 'Laboratoire SION - Centre',
-        address: 'Avenue de Gaulle, Centre Ville, Bafoussam',
-        phone: ['+237 233 345 678'],
-        email: 'bafoussam@labsion.cm',
-        services: ['Blood Tests', 'Biochemistry', 'Hematology', 'Parasitology'],
-        badges: ['Modern Equipment'],
-        coordinates: { lat: 5.478, lng: 10.418 }
-      }
-    ]
-  },
-  {
-    city: 'Bamenda',
-    agencies: [
-      {
-        id: 'bam-1',
-        name: 'Laboratoire SION - Commercial Avenue',
-        address: 'Commercial Avenue, Bamenda',
-        phone: ['+237 233 456 789'],
-        email: 'bamenda@labsion.cm',
-        services: ['Blood Tests', 'Immunology', 'Biochemistry'],
-        badges: [],
-        coordinates: { lat: 5.959, lng: 10.149 }
+        id: 'baf-biao',
+        name: 'Laboratoire SION – Biao',
+        address: 'Rond-point Biao, Bafoussam',
+        phone: ['+237 698 823 897'],
+        email: 'contact@laboratoiresion.org',
+        services: ['Analyses Biologiques', 'Imagerie Médicale'],
+        badges: ['Plateau Technique Moderne'],
+        coordinates: { lat: 5.4786, lng: 10.4173 }
       }
     ]
   }
 ];
 
+
 const trustFeatures = [
   {
     icon: Shield,
-    title: 'Certified Laboratory',
-    description: 'Accredited by national and international health authorities'
+    title: 'Laboratoire Certifié',
+    description: 'Accrédité par les autorités sanitaires nationales et internationales'
   },
   {
     icon: Zap,
-    title: 'Fast Results',
-    description: 'Express processing available with accurate diagnostics'
+    title: 'Résultats Rapides',
+    description: 'Traitement express disponible avec des diagnostics précis'
   },
   {
     icon: Lock,
-    title: 'Confidential',
-    description: 'Your medical data is protected with highest security standards'
+    title: 'Confidentialité',
+    description: 'Vos données médicales sont protégées selon les normes de sécurité les plus élevées'
   }
 ];
 
@@ -142,7 +149,7 @@ const AgencyCard: React.FC<{ agency: Agency }> = ({ agency }) => {
           <div className="flex-1">
             <CardTitle className="text-xl text-foreground mb-2">{agency.name}</CardTitle>
             <CardDescription className="flex items-start gap-2 text-muted-foreground">
-              <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary/60" />
+              <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary/60" />
               <span>{agency.address}</span>
             </CardDescription>
           </div>
@@ -151,7 +158,7 @@ const AgencyCard: React.FC<{ agency: Agency }> = ({ agency }) => {
           <div className="flex flex-wrap gap-2 mt-3">
             {agency.badges.map((badge, idx) => (
               <Badge key={idx} variant="secondary" className="bg-primary/10 text-primary border-primary/50">
-                {badge === '24/7 Service' && <Clock className="w-3 h-3 mr-1" />}
+                {badge === 'Service 24h/24 et 7j/7' && <Clock className="w-3 h-3 mr-1" />}
                 {badge}
               </Badge>
             ))}
@@ -161,7 +168,7 @@ const AgencyCard: React.FC<{ agency: Agency }> = ({ agency }) => {
       <CardContent>
         <div className="space-y-4">
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-2">Contact Information</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-2">Coordonnées</h4>
             <div className="space-y-2">
               {agency.phone.map((phone, idx) => (
                 <a
@@ -186,7 +193,7 @@ const AgencyCard: React.FC<{ agency: Agency }> = ({ agency }) => {
           <Separator />
 
           <div>
-            <h4 className="text-sm font-semibold text-foreground mb-2">Services Available</h4>
+            <h4 className="text-sm font-semibold text-foreground mb-2">Services Disponibles</h4>
             <div className="flex flex-wrap gap-2">
               {agency.services.map((service, idx) => (
                 <Badge key={idx} variant="outline" className="text-xs">
@@ -203,7 +210,7 @@ const AgencyCard: React.FC<{ agency: Agency }> = ({ agency }) => {
               onClick={() => window.open(`tel:${agency.phone[0]}`, '_self')}
             >
               <Phone className="w-4 h-4 mr-2" />
-              Call
+              Appeler
             </Button>
             <Button
               size="sm"
@@ -225,7 +232,7 @@ const AgencyCard: React.FC<{ agency: Agency }> = ({ agency }) => {
               }
             >
               <MapPin className="w-4 h-4 mr-2" />
-              Directions
+              Itinéraire
             </Button>
           </div>
         </div>
@@ -234,54 +241,148 @@ const AgencyCard: React.FC<{ agency: Agency }> = ({ agency }) => {
   );
 };
 
-const LaboratoireSionSites: React.FC = () => {
+const AgenciesSection: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>('all');
+  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const sectionsRef = useRef<HTMLDivElement>({} as HTMLDivElement);
+  const buttonsRef = useRef<HTMLDivElement>({} as HTMLDivElement);
 
-  const scrollToAgencies = () => {
-    document.getElementById('agencies-section')?.scrollIntoView({ behavior: 'smooth' });
-  };
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section is at center of viewport
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+        if (!entry.isIntersecting) {
+          setActiveSection(null);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe all sections
+    const element = sectionsRef.current;
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
 
   const filteredData = selectedCity === 'all' 
     ? agenciesData 
     : agenciesData.filter(city => city.city === selectedCity);
 
+  {/* Section Agences */}
+  return (
+      <section ref={sectionsRef} id="agencies-section" className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                Nos Emplacements
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+                Sélectionnez une ville pour voir nos sites de laboratoire et trouver celui qui est le plus proche de vous.
+              </p>
+            </div>
+
+            <Tabs value={selectedCity} onValueChange={setSelectedCity} className="w-full">
+              <div ref={buttonsRef} className={cn('w-full flex justify-center', 
+                {
+                  'fixed bottom-3 lg:bottom-20 left-0 px-4': activeSection === 'agencies-section',
+                  'relative bottom-0': activeSection !== 'agencies-section',
+                },)}>
+                <TabsList className={cn("grid w-full max-w-2xl mx-auto grid-cols-4 mb-12")}>
+                  <TabsTrigger value="all">Tout</TabsTrigger>
+                  {agenciesData.map((cityData) => (
+                    <TabsTrigger key={cityData.city} value={cityData.city}>
+                      {cityData.city}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
+
+              <TabsContent value={selectedCity} className="space-y-12">
+                {filteredData.map((cityData) => (
+                  <div key={cityData.city}>
+                    <div className="mb-6">
+                      <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+                        {cityData.city}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {cityData.agencies.length} {cityData.agencies.length === 1 ? 'emplacement disponible' : 'emplacements disponibles'}
+                      </p>
+                    </div>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {cityData.agencies.map((agency) => (
+                        <AgencyCard key={agency.id} agency={agency} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </TabsContent>
+            </Tabs>
+          </div>
+        </div>
+      </section>
+
+  )
+}
+
+const LaboratoireSionSites: React.FC = () => {
+
+  const scrollToAgencies = () => {
+    document.getElementById('agencies-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-teal-50 via-background to-teal-50/30 border-b border-border">
+      {/* Section Hero */}
+      <section className="relative bg-linear-to-br from-teal-50 via-background to-teal-50/30 border-b border-border">
         <div className="container mx-auto px-4 py-20 md:py-28">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-6 bg-primary/10 text-primary border-primary/50">
-              Medical Diagnostics Excellence
+              Excellence en Diagnostic Médical
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Our Laboratory Sites Across Cameroon
+              Nos Sites de Laboratoire à Travers le Cameroun
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Find the nearest Laboratoire SION agency and access reliable medical diagnostics with certified professionals and modern equipment.
+              Trouvez l'agence Laboratoire SION la plus proche et accédez à des diagnostics médicaux fiables avec des professionnels certifiés et des équipements modernes.
             </p>
             <Button
               size="lg"
               className="bg-primary/80 hover:bg-primary text-white text-lg px-8"
               onClick={scrollToAgencies}
             >
-              Find an Agency
+              Trouver une Agence
               <ChevronDown className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Trust & Credibility Section */}
+      {/* Section Confiance et Crédibilité */}
       <section className="py-16 bg-card border-b border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Why Choose Laboratoire SION?
+                Pourquoi Choisir Laboratoire SION ?
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Trusted by thousands of patients across Cameroon for accurate, fast, and confidential medical diagnostics.
+                Choisi par des milliers de patients à travers le Cameroun pour des diagnostics médicaux précis, rapides et confidentiels.
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -304,54 +405,7 @@ const LaboratoireSionSites: React.FC = () => {
         </div>
       </section>
 
-      {/* Agencies Section */}
-      <section id="agencies-section" className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Our Locations
-              </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-                Select a city to view our laboratory sites and find the one nearest to you.
-              </p>
-            </div>
-
-            <Tabs value={selectedCity} onValueChange={setSelectedCity} className="w-full">
-              <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-5 mb-12">
-                <TabsTrigger value="all">All Cities</TabsTrigger>
-                {agenciesData.map((cityData) => (
-                  <TabsTrigger key={cityData.city} value={cityData.city}>
-                    {cityData.city}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-
-              <TabsContent value={selectedCity} className="space-y-12">
-                {filteredData.map((cityData) => (
-                  <div key={cityData.city}>
-                    <div className="mb-6">
-                      <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-                        {cityData.city}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {cityData.agencies.length} {cityData.agencies.length === 1 ? 'location' : 'locations'} available
-                      </p>
-                    </div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {cityData.agencies.map((agency) => (
-                        <AgencyCard key={agency.id} agency={agency} />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </TabsContent>
-            </Tabs>
-          </div>
-        </div>
-      </section>
-
-      
+      <AgenciesSection />
     </div>
   );
 };
