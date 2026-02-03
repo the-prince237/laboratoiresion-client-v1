@@ -241,6 +241,11 @@ const AgencyCard: React.FC<{ agency: Agency }> = ({ agency }) => {
   );
 };
 
+const scrollToAgencies = () => {
+  document.getElementById('agencies-section')?.scrollIntoView({ behavior: 'smooth' });
+};
+
+
 const AgenciesSection: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>('all');
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -298,7 +303,7 @@ const AgenciesSection: React.FC = () => {
             </div>
 
             <Tabs value={selectedCity} onValueChange={setSelectedCity} className="w-full">
-              <div ref={buttonsRef} className={cn('w-full flex justify-center', 
+              <div onClick={scrollToAgencies} ref={buttonsRef} className={cn('w-full flex justify-center', 
                 {
                   'fixed bottom-3 lg:bottom-20 left-0 px-4': activeSection === 'agencies-section',
                   'relative bottom-0': activeSection !== 'agencies-section',
@@ -341,13 +346,8 @@ const AgenciesSection: React.FC = () => {
 }
 
 const LaboratoireSionSites: React.FC = () => {
-
-  const scrollToAgencies = () => {
-    document.getElementById('agencies-section')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative z-10 bg-background">
       {/* Section Hero */}
       <section className="relative bg-linear-to-br from-teal-50 via-background to-teal-50/30 border-b border-border">
         <div className="container mx-auto px-4 py-20 md:py-28">
