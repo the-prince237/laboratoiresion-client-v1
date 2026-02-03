@@ -4,8 +4,8 @@ import { CustomLayoutProps } from "@/types";
 
 const Layout = ({ children }: CustomLayoutProps) => {
   return(
-    <div>
-      <div className="opacity-40 animate-pulse">
+    <div className="overflow-x-hidden">
+      <div className="opacity-10 lg:opacity-30 animate-pulse  repeat-infinite">
         <Spotlight />
       </div>
       {children}

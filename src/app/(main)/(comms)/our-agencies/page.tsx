@@ -255,7 +255,7 @@ const AgenciesSection: React.FC = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '-50% 0px -50% 0px', // Trigger when section is at center of viewport
+      rootMargin: '-50% 0px -80% 0px', // Trigger when section is at center of viewport
       threshold: 0,
     };
 
@@ -305,7 +305,7 @@ const AgenciesSection: React.FC = () => {
             <Tabs value={selectedCity} onValueChange={setSelectedCity} className="w-full gap-12">
               <div onClick={scrollToAgencies} ref={buttonsRef} className={cn('w-full flex justify-center', 
                 {
-                  'fixed bottom-0 bg-[#f7f7f7] py-3 items-center md:bg-transparent md:bottom-20 z-50 left-0 px-4': activeSection === 'agencies-section',
+                  'fixed bottom-0 bg-[#f7f7f7] py-3 items-center md:py-6 z-50 left-0 px-4': activeSection === 'agencies-section',
                   'relative bottom-0': activeSection !== 'agencies-section',
                 },)}>
                 <TabsList className={cn("grid w-full max-w-2xl mx-auto grid-cols-4")}>
@@ -349,7 +349,7 @@ const LaboratoireSionSites: React.FC = () => {
   return (
     <div className="min-h-screen overflow-x-hidden relative">
       {/* Section Hero */}
-      <section className="relative bg-linear-to-br from-teal-50 via-background to-teal-50/30 border-b border-border">
+      <section className="relative border-b border-border">
         <div className="container mx-auto px-4 py-20 md:py-28">
           <div className="max-w-4xl mx-auto text-center">
             <Badge className="mb-6 bg-primary/10 text-primary border-primary/50">
