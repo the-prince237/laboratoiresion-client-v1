@@ -359,7 +359,7 @@ const LaboratoireSionSites: React.FC = () => {
               Nos Sites de Laboratoire à Travers le Cameroun
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Trouvez l'agence Laboratoire SION la plus proche et accédez à des diagnostics médicaux fiables avec des professionnels certifiés et des équipements modernes.
+              {"Trouvez l'agence Laboratoire SION la plus proche et accédez à des diagnostics médicaux fiables avec des professionnels certifiés et des équipements modernes."}
             </p>
             <Button
               size="lg"

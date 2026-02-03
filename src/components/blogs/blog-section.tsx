@@ -3,6 +3,7 @@ import { Title1 } from '../common';
 import { BlogSectionProps } from '../types';
 import Link from 'next/link';
 import { Calendar, Clock, FileText } from 'lucide-react';
+import Image from 'next/image';
 
 export const BlogSection = ({ blogSection }: { blogSection: BlogSectionProps | undefined}) => {
   if(!blogSection) {
@@ -37,7 +38,7 @@ export const BlogSection = ({ blogSection }: { blogSection: BlogSectionProps | u
               className='border cursor-pointer rounded-lg overflow-hidden shadow hover:shadow-lg transition-all duration-300 hover:scale-[1.02]'
             >
               <div className='relative'>
-                <img 
+                <Image 
                   src={article.image} 
                   alt={article.title} 
                   className='w-full h-48 object-cover' 

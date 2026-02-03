@@ -1,6 +1,5 @@
 import React from 'react'
 import { ContentLayout } from '@/components'
-import { Metadata } from "next";
 import { examList, examsByCategories, examsSlideImages, metaImages } from "./data";
 
 export const generateMetaData = async () => {

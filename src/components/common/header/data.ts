@@ -1,7 +1,6 @@
 import { blogSections } from '@/app/blogs/data';
-import { Building, Dna, Gift, List, ListFilter, Menu, Newspaper, Package, Phone, PlusCircle, PlusSquare, Scan, SearchX } from 'lucide-react';
+import { Building, Dna, Gift, List, ListFilter, Newspaper, Package, Phone, PlusCircle, PlusSquare, Scan, SearchX } from 'lucide-react';
 import { BiHealth } from 'react-icons/bi';
-import { FaUserDoctor } from 'react-icons/fa6';
 import { GiDoctorFace } from 'react-icons/gi';
 
 export const navigationItems = [
@@ -42,7 +41,7 @@ export const navigationItems = [
       },
       {
         title: 'Préparer Ma Visite',
-        link: '/visit-us',
+        link: '/our-agencies',
         Icon: ListFilter,
       },
     ],

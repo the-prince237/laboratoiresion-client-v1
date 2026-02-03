@@ -1,4 +1,4 @@
-import { Contacts, Title1 } from '@/components'
+import { Title1 } from '@/components'
 import React from 'react'
 
 const VisitUs = () => {
