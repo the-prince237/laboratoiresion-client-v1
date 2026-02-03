@@ -347,7 +347,7 @@ const AgenciesSection: React.FC = () => {
 
 const LaboratoireSionSites: React.FC = () => {
   return (
-    <div className="min-h-screen relative z-10 bg-background">
+    <div className="min-h-screen overflow-x-hidden relative z-10">
       {/* Section Hero */}
       <section className="relative bg-linear-to-br from-teal-50 via-background to-teal-50/30 border-b border-border">
         <div className="container mx-auto px-4 py-20 md:py-28">
