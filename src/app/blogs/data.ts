@@ -68,7 +68,7 @@ const allArticles = {
         type: "pdf",
         title: "Le Cortisol",
         tag: "le-cortisol",
-        pdfPath: "/documents/LE_CORTISOL_version finale.pdf",
+        pdfPath: "/documents/le-cortisol.pdf",
         image: "https://plus.unsplash.com/premium_photo-1722622864970-be2ea1c24f6f?q=80&w=1536&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         number: 6,
         date: "2018-01-01",
@@ -135,6 +135,18 @@ const allArticles = {
         pages: 2,
         timeToRead: "6 min",
         resume: "Si la mesure du PSA total est déterminante, l'évaluation du rapport PSA libre/PSA total donne une meilleure orientation diagnostique pour le dépistage du cancer de la prostate."
+      },
+      {
+        type: "pdf",
+        title: "L’apolipoprotéine B ",
+        tag: "apolipoproteine-b",
+        pdfPath: "/documents/Lapolipoprotéine-B.pdf",
+        image: '/images/blog/APOC3.png',
+        number: 12,
+        date: "2026-03-10",
+        pages: 2,
+        timeToRead: "4 min",
+        resume: "Les maladies cardiovasculaires (MCV) sont un problème majeur de santé publique, caractérisées surtout par leur évolution silencieuse"
       }
   ],
 }

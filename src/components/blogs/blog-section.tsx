@@ -41,7 +41,9 @@ export const BlogSection = ({ blogSection }: { blogSection: BlogSectionProps | u
                 <Image 
                   src={article.image} 
                   alt={article.title} 
-                  className='w-full h-48 object-cover' 
+                  className='w-full h-48 object-cover'
+                  height={500}
+                  width={500}
                 />
                 <div className='absolute top-2 right-2 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded'>
                   N°{article.number}
