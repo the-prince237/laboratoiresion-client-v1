@@ -8,12 +8,12 @@ const allArticles = {
         type: "pdf",
         title: "Biochimie du Sperme",
         tag: "biochimie-du-sperme",
-        pdfPath: "/documents/biochimie du sperme PARFAIT.pdf",
+        pdfPath: "/documents/la-biochimie-du-sperme.pdf",
         image: "https://images.unsplash.com/photo-1631824680987-8bae525fc696?q=80&w=1008&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         number: 1,
         date: "2022-04-01",
-        pages: 3,
-        timeToRead: "8 min",
+        pages: 2,
+        timeToRead: "5 min",
         resume: "L'analyse biochimique du plasma séminal est un outil extrêmement précieux dans le domaine de l'infertilité masculine. Elle renseigne sur l'aspect fonctionnel de l'épididyme, de la prostate et des vésicules séminales."
       },
       {
@@ -147,6 +147,30 @@ const allArticles = {
         pages: 2,
         timeToRead: "4 min",
         resume: "Les maladies cardiovasculaires (MCV) sont un problème majeur de santé publique, caractérisées surtout par leur évolution silencieuse"
+      },
+      {
+        type: "pdf",
+        title: "Le FIB-4",
+        tag: "fib-4",
+        pdfPath: "/documents/fib-4.pdf",
+        image: '/images/blog/fib-4.jpg',
+        number: 13,
+        date: "2026-02-10",
+        pages: 2,
+        timeToRead: "5 min",
+        resume: "un nouvel outil simple et efficace de dépistage des maladies chroniques du foie."
+      },
+      {
+        type: "pdf",
+        title: "Examen Cytobactériologique Des Crachats",
+        tag: "cytobacteriologie-des-crachats",
+        pdfPath: "/documents/cytobacteriologie-des-crachats.pdf",
+        image: '/images/blog/cytobacteriologie-des-crachats.webp',
+        number: 14,
+        date: "2018-11-06",
+        pages: 2,
+        timeToRead: "5 min",
+        resume: "L’ECBC est un examen clé et non invasif dans la prise en charge des pneumopathies bactériennes"
       }
   ],
 }
