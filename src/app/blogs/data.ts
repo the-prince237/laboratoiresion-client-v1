@@ -30,18 +30,6 @@ const allArticles = {
       },
       {
         type: "pdf",
-        title: "ECBC — Examen CytoBactériologique des Crachats",
-        tag: "ecbc-examen-cytobacteriologique-des-crachats",
-        pdfPath: "/documents/ECBC bon.pdf",
-        image: "https://plus.unsplash.com/premium_photo-1754265613652-2ba28c561d7b?q=80&w=945&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-        number: 3,
-        date: "2018-11-01",
-        pages: 2,
-        timeToRead: "5 min",
-        resume: "L'ECBC est un examen clé et non invasif dans la prise en charge des pneumopathies bactériennes. Il permet l'identification précise du germe en cause pour la réadaptation de l'antibiothérapie."
-      },
-      {
-        type: "pdf",
         title: "Gastropanel",
         tag: "gastropanel",
         pdfPath: "/documents/GASTROPANEL bon.pdf",
