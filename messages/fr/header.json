@@ -1,0 +1,26 @@
+{
+  "home": "Accueil",
+  "scientificResearch": "Recherche Scientifique",
+  "nav": {
+    "services": "Services",
+    "biologicalAnalyses": "Analyses Biologiques",
+    "medicalImaging": "Imagerie Médicale",
+    "functionalExploration": "Exploration Fonctionnelle",
+    "patientArea": "Espace Patient",
+    "weeklyAdvice": "Conseil De La Semaine",
+    "prepareMyVisit": "Préparer Ma Visite",
+    "proArea": "Espace Pro",
+    "becomePartner": "Devenir Partenaire",
+    "samplingManual": "Manuel De Prélèvements",
+    "whatsNewSion": "Quoi de Neuf SION ?",
+    "blog": "Blog",
+    "ourExams": "Nos Examens",
+    "ourAgencies": "Nos Agences",
+    "contactUs": "Contactez Nous"
+  },
+  "language": {
+    "label": "Langue",
+    "fr": "Français",
+    "en": "Anglais"
+  }
+}

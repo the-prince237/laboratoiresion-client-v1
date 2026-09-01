@@ -3,14 +3,18 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./expansion-hero";
 import { useParams } from "next/navigation";
-import { services, ServiceTag } from "../../app/(main)/services/data";
+import { getServices, ServiceTag } from "@/data/services";
+import { useLocale, useTranslations } from "next-intl";
+import type { Locale } from "@/i18n/routing";
 import ServiceCard from "./service-card";
 import FAQ from "./faq";
 
 export * from './expansion-hero'
 export function ServiceHero() {
+  const t = useTranslations('services');
+  const locale = useLocale() as Locale;
   const serviceTag = useParams().serviceTag as ServiceTag;
-  const { title, description, images } = services.find(s => s.tag === serviceTag)!;
+  const { title, description, images } = getServices(locale).find(s => s.tag === serviceTag)!;
 
   return (
     <ImagesSlider className="h-[40rem] bg-black" images={images}>
@@ -36,7 +40,7 @@ export function ServiceHero() {
           </p>
         </div>
         <button className="px-4 py-2 backdrop-blur-sm border bg-secondary/10 border-secondary/20 text-white mx-auto text-center rounded-full relative mt-4">
-          <span>Nos Examens En {title} →</span>
+          <span>{t.rich('examsIn', { service: () => title })}</span>
           <div className="absolute inset-x-0  h-px -bottom-px bg-gradient-to-r w-3/4 mx-auto from-transparent via-primary to-transparent" />
         </button>
       </motion.div>
@@ -45,8 +49,9 @@ export function ServiceHero() {
 }
 
 export function ServiceContent() {
+  const locale = useLocale() as Locale;
   const serviceTag = useParams().serviceTag as ServiceTag;
-  const { title="", description="", items=[], children=<></>, faq = []} = services.find(s => s.tag === serviceTag)?.content || {};
+  const { title="", description="", items=[], children=<></>, faq = []} = getServices(locale).find(s => s.tag === serviceTag)?.content || {};
 
   return (
     <section className="py-12 lg:py-28 xl:py-44 padded-x w-full flex flex-col items-center gap-12">

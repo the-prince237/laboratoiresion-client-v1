@@ -1,0 +1,27 @@
+{
+  "copyright": "© {year} Les Laboratoires SION. Tous droits réservés.",
+  "sections": {
+    "services": {
+      "label": "Services",
+      "biologicalAnalyses": "Analyses Biologiques",
+      "medicalImaging": "Imagerie Médicale",
+      "functionalExploration": "Exploration Fonctionnelle"
+    },
+    "resources": {
+      "label": "Ressources",
+      "exams": "Nos Examens",
+      "whatsNew": "Quoi de neuf SION ?",
+      "weeklyAdvice": "Conseil De La Semaine",
+      "research": "Recherche Scientifique"
+    },
+    "laboratory": {
+      "label": "Le Laboratoire",
+      "ourAgencies": "Nos Agences",
+      "visitUs": "Visitez Nous",
+      "contactUs": "Contactez Nous"
+    },
+    "social": {
+      "label": "Réseaux Sociaux"
+    }
+  }
+}

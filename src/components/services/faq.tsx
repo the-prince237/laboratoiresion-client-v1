@@ -3,17 +3,19 @@ import { useState } from 'react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { Minus, PlusIcon } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 import { line } from '../../../public';
-import { FaqItem } from '../../app/(main)/services/data';
+import type { FaqItem } from '@/data/services';
 
 const FAQ = ({ faqs }: { faqs: FaqItem[]}) => {
+  const t = useTranslations('services');
   const [opened, setOpened] = useState<number | null>(0);
   return (
     <div className='py-40 flex w-full flex-col gap-10 items-center'>
       <div className='flex flex-col gap-5'>
-        <h3 className='text-3xl font-black'>FAQ</h3>
-        <p>Bienvenue dans notre section FAQ dédiée à répondre à vos questions les plus fréquentes concernant nos services de laboratoire d’analyse médicale. Trouvez ici des réponses à vos interrogations sur les prélèvements, les délais d’attente, les types d’analyses disponibles, la confidentialité des résultats et bien plus encore.</p>
+        <h3 className='text-3xl font-black'>{t('faq.title')}</h3>
+        <p>{t('faq.intro')}</p>
       </div>
 
       <div className='grid w-full grid-cols-1 lg:grid-cols-2 lg:gap-x-10 xl:gap-x-20'>

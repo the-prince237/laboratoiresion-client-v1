@@ -1,6 +1,7 @@
 'use client'
 import { CustomToggler } from "@/components/common";
 import { VisitorEnum } from "@/domain";
+import { useTranslations } from "next-intl";
 import { ReactNode } from "react";
 import { GiDoctorFace, GiHealthCapsule } from "react-icons/gi";
 
@@ -8,21 +9,23 @@ const ContentParagraph = ({children}: {children: ReactNode}) => <p className="te
                   {children}
                 </p>
 
-export const HeroToggler = () => <CustomToggler<VisitorEnum>
+export const HeroToggler = () => {
+  const t = useTranslations('home.hero');
+  return <CustomToggler<VisitorEnum>
                   initialToggleType={VisitorEnum.PATIENT}
                   togglerItems={[
                     {
-                      title: 'Patient',
+                      title: t('patient.title'),
                       tag: VisitorEnum.PATIENT,
                       Icon: GiHealthCapsule,
-                      content: <ContentParagraph>Analyses biologiques et imagerie médicale fiables, rapides et confidentielles — pour des résultats clairs et un suivi serein.</ContentParagraph>
+                      content: <ContentParagraph>{t('patient.description')}</ContentParagraph>
                     },
                     {
-                      title: 'Prescripteur',
+                      title: t('prescriber.title'),
                       tag: VisitorEnum.PRESCRIBER,
                       Icon: GiDoctorFace,
-                      content: <ContentParagraph>Le Laboratoire Sion soutient les médecins prescripteurs avec des diagnostics précis et un partage rapide des résultats.
-Fiabilité, rigueur scientifique et collaboration au service du patient.</ContentParagraph>
+                      content: <ContentParagraph>{t('prescriber.description')}</ContentParagraph>
                     },
                   ]}
                 />
+}

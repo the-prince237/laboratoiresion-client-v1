@@ -1,7 +1,8 @@
 'use client';
 
 import { X } from 'lucide-react';
-import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { useRouter } from '@/i18n/navigation';
 import Logo from '../logo';
 
 interface PDFReaderProps {
@@ -11,6 +12,7 @@ interface PDFReaderProps {
 
 export function PDFReader({ pdfPath, title }: PDFReaderProps) {
   const router = useRouter()
+  const t = useTranslations('common')
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-90 z-1001 flex flex-col">
@@ -23,7 +25,7 @@ export function PDFReader({ pdfPath, title }: PDFReaderProps) {
         <button
           onClick={() => router.back()}
           className="p-2 hover:bg-gray-700 rounded"
-          title="Fermer"
+          title={t('close')}
         >
           <X className="w-5 h-5" />
         </button>

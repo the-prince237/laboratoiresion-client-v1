@@ -1,0 +1,108 @@
+{
+  "hero": {
+    "title": "Analyses <b1>Biologiques</b1>  et Imagerie <b2>Médicale</b2>.",
+    "badge": "Je suis ...",
+    "contact": "Contactez Nous",
+    "patient": {
+      "title": "Patient",
+      "description": "Analyses biologiques et imagerie médicale fiables, rapides et confidentielles — pour des résultats clairs et un suivi serein."
+    },
+    "prescriber": {
+      "title": "Prescripteur",
+      "description": "Le Laboratoire Sion soutient les médecins prescripteurs avec des diagnostics précis et un partage rapide des résultats.\nFiabilité, rigueur scientifique et collaboration au service du patient."
+    }
+  },
+  "features": {
+    "tagline": "Pourquoi Nous ?",
+    "title": "Découvrez ce qui distingue <gradient>Laboratoire Sion</gradient>",
+    "subtitle": "Votre partenaire privilégié pour des examens médicaux de qualité",
+    "cta": "Prendre Rendez-vous",
+    "items": {
+      "tech-1": {
+        "title": "Technologies de Pointe",
+        "description": "Utilisation des dernières technologies pour des examens précis et fiables."
+      },
+      "tech-2": {
+        "title": "Innovation Continue",
+        "description": "Veille technologique constante pour des examens à la pointe de la technologie."
+      },
+      "tech-3": {
+        "title": "Fiabilité des Résultats",
+        "description": "Des analyses précises et des rapports détaillés pour une confiance totale."
+      },
+      "tech-4": {
+        "title": "Personnel Spécialisé",
+        "description": "Une équipe qualifiée et dédiée à vous offrir un service personnalisé."
+      }
+    }
+  },
+  "stats": {
+    "badge": "Notre Impact",
+    "title": "Un laboratoire d'analyses médicales de confiance",
+    "subtitle": "Des résultats précis grâce à une technologie de pointe et une expertise dédiée",
+    "items": {
+      "tests": {
+        "label": "Analyses réalisées par an",
+        "description": "Une offre diagnostique complète"
+      },
+      "patients": {
+        "label": "Patients satisfaits",
+        "description": "La confiance des professionnels de santé"
+      },
+      "accuracy": {
+        "label": "Taux de fiabilité",
+        "description": "Une précision de référence"
+      },
+      "emergency": {
+        "label": "Services d'urgence",
+        "description": "Une disponibilité jour et nuit"
+      }
+    },
+    "ctaTitle": "Besoin d'une analyse ? Prenez rendez-vous dès aujourd'hui",
+    "ctaSubtitle": "Des services de laboratoire rapides, précis et fiables, à votre convenance",
+    "bookNow": "Prendre rendez-vous",
+    "learnMore": "En savoir plus"
+  },
+  "contacts": {
+    "tagline": "Prenez Contact",
+    "title": "Contactez Nous",
+    "subtitle": "Rejoignez notre communauté de partenaires et de patients reconnaissants, et restez connectés à toutes nous mises à jour.",
+    "platforms": {
+      "facebook": "Réseau social",
+      "tiktok": "Vidéos courtes",
+      "instagram": "Stories visuelles",
+      "email": "Contactez-nous"
+    },
+    "connect": "Suivre",
+    "whatsapp": "Whatsapp !"
+  },
+  "testimonials": {
+    "items": {
+      "t1": {
+        "quote": "J'ai reçu mes résultats d'analyses en quelques heures, avec des explications claires. L'équipe est accueillante et le suivi vraiment rassurant.",
+        "name": "Marie-Claire Ngo Bassa",
+        "designation": "Patiente à Douala"
+      },
+      "t2": {
+        "quote": "Les comptes rendus sont précis et transmis rapidement, ce qui facilite la prise en charge de mes patients. Un partenaire fiable pour la prescription d'examens.",
+        "name": "Dr Emmanuel Mbarga",
+        "designation": "Médecin généraliste"
+      },
+      "t3": {
+        "quote": "Un accueil chaleureux, des prélèvements sans stress et des résultats fiables. Je recommande le laboratoire à toute ma famille.",
+        "name": "Estelle Fouda",
+        "designation": "Patiente à Yaoundé"
+      },
+      "t4": {
+        "quote": "La qualité des analyses et la rigueur scientifique de l'équipe m'inspirent une confiance totale pour le suivi de mes patients.",
+        "name": "Dr Serge Kamga",
+        "designation": "Cardiologue"
+      },
+      "t5": {
+        "quote": "Le personnel est à l'écoute et la confidentialité est toujours respectée. Les résultats sont clairs et remis dans les délais annoncés.",
+        "name": "Joséphine Atangana",
+        "designation": "Patiente à Bafoussam"
+      }
+    }
+  }
+}

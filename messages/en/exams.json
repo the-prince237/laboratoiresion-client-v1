@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Complete Catalogue of Medical Tests | SION Laboratories",
+    "description": "Explore the complete catalogue of medical tests and analyses at SION Laboratories: medical biology, biochemistry, immunology, haematology, bacteriology, endocrinology, radiology, ultrasound, molecular biology, and specialised tests. Find prices, turnaround times, indications and all the information patients and healthcare professionals need.",
+    "siteName": "SION Laboratories",
+    "keywords": [
+      "medical tests",
+      "SION Laboratories",
+      "medical biology",
+      "medical analyses",
+      "test prices",
+      "test turnaround times",
+      "biochemistry",
+      "immunology",
+      "haematology",
+      "bacteriology",
+      "radiology",
+      "ultrasound",
+      "molecular biology",
+      "specialised tests"
+    ]
+  },
+  "categoryMeta": {
+    "notFoundTitle": "Test Not Found | SION Laboratories",
+    "notFoundDescription": "The test you are looking for could not be found. Please check the URL or return to the tests page.",
+    "title": "{label} - {tag} | SION Laboratories",
+    "description": "Discover the full details of the \"{label}\" test in the {tag} category. Information on prices, turnaround times and clinical indications is available for patients and healthcare professionals.",
+    "keywords": [
+      "SION Laboratories",
+      "medical tests",
+      "test prices",
+      "test turnaround times",
+      "medical biology",
+      "laboratory tests"
+    ]
+  },
+  "layout": {
+    "sidebarTitle": "Category",
+    "heroTitle": "Our Tests",
+    "heroDescription": "Discover our full range of medical tests, carefully organised by category to make your search easier. Whether you are looking for routine analyses or specialised testing, our platform gives you quick and easy access to all the information you need to make informed decisions about your health."
+  },
+  "page": {
+    "noExams": "No tests listed yet"
+  }
+}

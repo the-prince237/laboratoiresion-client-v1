@@ -1,16 +1,20 @@
 import React from 'react'
 import { Title1 } from '../common';
 import { BlogSectionProps } from '../types';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { Calendar, Clock, FileText } from 'lucide-react';
 import Image from 'next/image';
+import { useLocale, useTranslations } from 'next-intl';
 
 export const BlogSection = ({ blogSection }: { blogSection: BlogSectionProps | undefined}) => {
+  const t = useTranslations('blogs');
+  const locale = useLocale();
+
   if(!blogSection) {
     return (
       <div className='page padded'>
         <div className='text-center py-12 text-gray-500'>
-          Rubrique non trouvée.
+          {t('sectionNotFound')}
         </div>
       </div>
     );
@@ -20,7 +24,7 @@ export const BlogSection = ({ blogSection }: { blogSection: BlogSectionProps | u
   const blogSectionTag = blogSection?.tag || '';
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
-    return date.toLocaleDateString('fr-FR', { 
+    return date.toLocaleDateString(locale === 'en' ? 'en-GB' : 'fr-FR', {
       year: 'numeric', 
       month: 'long', 
       day: 'numeric' 
@@ -62,7 +66,7 @@ export const BlogSection = ({ blogSection }: { blogSection: BlogSectionProps | u
                   
                   <div className='flex items-center gap-1'>
                     <FileText className='w-4 h-4' />
-                    <span>{article.pages} pages</span>
+                    <span>{t('pageCount', { count: article.pages })}</span>
                   </div>
                   
                   <div className='flex items-center gap-1'>
@@ -77,7 +81,7 @@ export const BlogSection = ({ blogSection }: { blogSection: BlogSectionProps | u
 
         {articles.length === 0 && (
           <div className='text-center py-12 text-gray-500'>
-            Aucun article disponible pour le moment.
+            {t('noArticles')}
           </div>
         )}
       </div>

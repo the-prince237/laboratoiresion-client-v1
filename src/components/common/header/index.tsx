@@ -1,29 +1,38 @@
 'use client';
 import React, { useState } from 'react';
 import { Navigator } from './Navigator';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
 import { ChevronDown, Dna, Menu, X } from 'lucide-react';
-import { navigationItems } from './data';
+import { getNavigationItems } from './data';
+import { useLocale, useTranslations } from 'next-intl';
+import type { Locale } from '@/i18n/routing';
 import { cn } from '@/lib/utils';
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/i18n/navigation';
 import Logo from '../logo';
+import { LanguageSwitcher } from './language-switcher';
 
-const ScientificResearchButton = () => (
-  <Link href='/research' className='w-full gap-3 flex font-black'>
-    <Dna /> Recherche Scientifique
-  </Link>
-)
+const ScientificResearchButton = () => {
+  const t = useTranslations('header');
+  return (
+    <Link href='/research' className='w-full gap-3 flex font-black'>
+      <Dna /> {t('scientificResearch')}
+    </Link>
+  );
+};
 
 export const Header = () => {
   const [opened, setOpened] = useState(false);
   const [openedSubMenu, setOpenenedSubMenu] = useState<null | string>(null);
   const router = useRouter();
+  const locale = useLocale() as Locale;
+  const t = useTranslations('header');
+  const navigationItems = getNavigationItems(locale, t);
   return (
     <header className='fixed z-1000 m-auto flex h-fit w-full flex-col items-end font-sans'>
       <div className='z-100 relative flex min-h-16 w-full items-center justify-between bg-white/50 px-5 py-4 border-gray-200 border-0 border-b border-solid backdrop-blur-lg'>
         <Link className='flex items-center gap-3 bg-gray-100 hover:bg-gray-200 p-2 pr-12 rounded-full' href='/'>
           <Logo />
-          <span className='font-bold'>Accueil</span>
+          <span className='font-bold'>{t('home')}</span>
         </Link>
         <div className='hidden items-center gap-5 xl:flex'>
           <Navigator />
@@ -31,6 +40,7 @@ export const Header = () => {
           <div className='flex gap-3'>
             <ScientificResearchButton />
           </div>
+          <LanguageSwitcher />
         </div>
         <div className='relative xl:hidden'>
           <div
@@ -104,6 +114,9 @@ export const Header = () => {
 
         <div className='flex gap-3 w-full py-5'>
           <ScientificResearchButton />
+        </div>
+        <div className='flex w-full px-3 pb-2'>
+          <LanguageSwitcher />
         </div>
       </div>
     </header>

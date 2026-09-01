@@ -2,17 +2,19 @@ import { ToolCase } from "lucide-react";
 import { ServiceCardProps } from "../types";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 const ServiceCard = ({
-  title = 'LinkedIn',
+  title = '',
   Icon = ToolCase,
   image = 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&',
   gradient = 'from-blue-600 to-blue-400',
   link = '#',
-  description = 'Professional Network',
+  description = '',
   index = 0,
 }: ServiceCardProps & { index: number }) => {
+  const t = useTranslations('services');
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -77,7 +79,7 @@ const ServiceCard = ({
             {/* Arrow Icon */}
             <div className='flex items-center text-gray-600 transition-all duration-300 group-hover:text-black'>
               <span className='text-sm font-medium transition-all duration-300 group-hover:translate-x-0'>
-                Connect
+                {t('discover')}
               </span>
               <svg
                 className='ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1'

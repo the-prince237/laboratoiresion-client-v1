@@ -2,6 +2,7 @@
 import * as React from "react"
 import { motion, HTMLMotionProps, Variants } from "framer-motion"
 import { Microscope, Zap, Shield, Users } from "lucide-react"
+import { useTranslations } from "next-intl"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 import { Title1 } from "@/components/common";
@@ -96,8 +97,6 @@ ContainerAnimated.displayName = "ContainerAnimated"
 
 interface Feature {
   id: string
-  title: string
-  description: string
   icon: React.ReactNode
   color: string
 }
@@ -105,35 +104,28 @@ interface Feature {
 const FEATURES: Feature[] = [
   {
     id: "tech-1",
-    title: "Technologies de Pointe",
-    description: "Utilisation des dernières technologies pour des examens précis et fiables.",
     icon: <Microscope className="size-8" />,
     color: "from-blue-500 to-cyan-500",
   },
   {
     id: "tech-2",
-    title: "Innovation Continue",
-    description: "Veille technologique constante pour des examens à la pointe de la technologie.",
     icon: <Zap className="size-8" />,
     color: "from-purple-500 to-pink-500",
   },
   {
     id: "tech-3",
-    title: "Fiabilité des Résultats",
-    description: "Des analyses précises et des rapports détaillés pour une confiance totale.",
     icon: <Shield className="size-8" />,
     color: "from-emerald-500 to-teal-500",
   },
   {
     id: "tech-4",
-    title: "Personnel Spécialisé",
-    description: "Une équipe qualifiée et dédiée à vous offrir un service personnalisé.",
     icon: <Users className="size-8" />,
     color: "from-orange-500 to-red-500",
   },
 ]
 
 function LaboratoireSionFeatures() {
+  const t = useTranslations('home.features');
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-950 dark:via-blue-950 dark:to-purple-950 py-16 md:py-32">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
@@ -148,20 +140,23 @@ function LaboratoireSionFeatures() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              Pourquoi Nous ?
+              {t('tagline')}
             </motion.h2>
           </ContainerAnimated>
           <ContainerAnimated>
             <Title1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              Découvrez ce qui distingue{" "}
-              <GradientText className="text-4xl md:text-5xl lg:text-6xl font-bold">
-                Laboratoire Sion
-              </GradientText>
+              {t.rich('title', {
+                gradient: (chunks) => (
+                  <GradientText className="text-4xl md:text-5xl lg:text-6xl font-bold">
+                    {chunks}
+                  </GradientText>
+                ),
+              })}
             </Title1>
           </ContainerAnimated>
           <ContainerAnimated>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              Votre partenaire privilégié pour des examens médicaux de qualité
+              {t('subtitle')}
             </p>
           </ContainerAnimated>
         </ContainerStagger>
@@ -210,7 +205,7 @@ function LaboratoireSionFeatures() {
                       whileHover={{ x: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      {feature.title}
+                      {t(`items.${feature.id}.title`)}
                     </motion.h3>
                   </CardHeader>
                   
@@ -221,7 +216,7 @@ function LaboratoireSionFeatures() {
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {feature.description}
+                      {t(`items.${feature.id}.description`)}
                     </motion.p>
                   </CardContent>
 
@@ -269,7 +264,7 @@ function LaboratoireSionFeatures() {
                   initial={{ x: "-100%", opacity: 0.2 }}
                   whileHover={{ x: "100%", transition: { duration: 0.6 } }}
                 />
-                <span className="relative z-10">Prendre Rendez-vous</span>
+                <span className="relative z-10">{t('cta')}</span>
               </motion.button>
             </motion.div>
           </ContainerAnimated>

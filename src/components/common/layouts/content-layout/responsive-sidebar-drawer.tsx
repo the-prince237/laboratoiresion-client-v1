@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import Link from "next/link";
+import { Link } from '@/i18n/navigation';
 import { Button } from "../../../ui";
 import { Blocks, X } from "lucide-react";
 import { cn } from "@/lib";

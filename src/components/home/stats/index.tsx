@@ -1,5 +1,6 @@
 import React from 'react';
 import { Activity, Users, Award, TrendingUp } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 import { Card } from '@/components/ui/card';
 
 interface StatisticCardProps {
@@ -59,54 +60,59 @@ interface MedicalLabStatisticsProps {
 }
 
 const MedicalLabStatistics: React.FC<MedicalLabStatisticsProps> = ({
-  stats = [
+  stats,
+  title,
+  subtitle
+}) => {
+  const t = useTranslations('home.stats');
+  const defaultStats = [
     {
       icon: <Activity className="w-6 h-6" />,
       value: '50,000+',
-      label: 'Tests Performed Annually',
+      label: t('items.tests.label'),
       trend: '+12%',
-      description: 'Comprehensive diagnostic services'
+      description: t('items.tests.description')
     },
     {
       icon: <Users className="w-6 h-6" />,
       value: '25,000+',
-      label: 'Satisfied Patients',
+      label: t('items.patients.label'),
       trend: '+18%',
-      description: 'Trusted by healthcare professionals'
+      description: t('items.patients.description')
     },
     {
       icon: <Award className="w-6 h-6" />,
       value: '99.8%',
-      label: 'Accuracy Rate',
-      description: 'Industry-leading precision'
+      label: t('items.accuracy.label'),
+      description: t('items.accuracy.description')
     },
     {
       icon: <Activity className="w-6 h-6" />,
       value: '24/7',
-      label: 'Emergency Services',
-      description: 'Round-the-clock availability'
+      label: t('items.emergency.label'),
+      description: t('items.emergency.description')
     }
-  ],
-  title = 'Trusted Medical Laboratory',
-  subtitle = 'Delivering accurate results with cutting-edge technology and expert care'
-}) => {
+  ];
+  const resolvedStats = stats ?? defaultStats;
+  const resolvedTitle = title ?? t('title');
+  const resolvedSubtitle = subtitle ?? t('subtitle');
   return (
     <section className="w-full py-16 px-4 bg-background">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 space-y-4">
           <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">
-            Our Impact
+            {t('badge')}
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-            {title}
+            {resolvedTitle}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {subtitle}
+            {resolvedSubtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {stats.map((stat, index) => (
+          {resolvedStats.map((stat, index) => (
             <StatisticCard
               key={index}
               icon={stat.icon}
@@ -122,18 +128,18 @@ const MedicalLabStatistics: React.FC<MedicalLabStatisticsProps> = ({
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex-1 text-center md:text-left">
               <h3 className="text-2xl font-bold text-foreground mb-2">
-                Need a Test? Book Your Appointment Today
+                {t('ctaTitle')}
               </h3>
               <p className="text-muted-foreground">
-                Fast, accurate, and reliable laboratory services at your convenience
+                {t('ctaSubtitle')}
               </p>
             </div>
             <div className="flex gap-4">
               <button className="px-6 py-3 rounded-lg bg-secondary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors">
-                Book Now
+                {t('bookNow')}
               </button>
               <button className="px-6 py-3 rounded-lg border border-border bg-background text-foreground font-semibold hover:bg-accent transition-colors">
-                Learn More
+                {t('learnMore')}
               </button>
             </div>
           </div>

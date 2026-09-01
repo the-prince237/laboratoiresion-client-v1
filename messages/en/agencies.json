@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "Excellence in Medical Diagnostics",
+    "title": "Our Laboratory Sites Across Cameroon",
+    "description": "Find the nearest Laboratoire SION branch and access reliable medical diagnostics with certified professionals and modern equipment.",
+    "cta": "Find a Branch"
+  },
+  "trust": {
+    "title": "Why Choose Laboratoire SION?",
+    "description": "Trusted by thousands of patients across Cameroon for accurate, fast and confidential medical diagnostics.",
+    "features": {
+      "certified": {
+        "title": "Certified Laboratory",
+        "description": "Accredited by national and international health authorities"
+      },
+      "fast": {
+        "title": "Fast Results",
+        "description": "Express processing available with accurate diagnostics"
+      },
+      "confidential": {
+        "title": "Confidentiality",
+        "description": "Your medical data is protected according to the highest security standards"
+      }
+    }
+  },
+  "locations": {
+    "title": "Our Locations",
+    "description": "Select a city to view our laboratory sites and find the one closest to you.",
+    "all": "All",
+    "available": "{count, plural, one {# location available} other {# locations available}}"
+  },
+  "card": {
+    "contactDetails": "Contact Details",
+    "availableServices": "Available Services",
+    "call": "Call",
+    "email": "Email",
+    "directions": "Directions"
+  },
+  "services": {
+    "biology": "Laboratory Testing",
+    "imaging": "Medical Imaging",
+    "ultrasound": "Ultrasound",
+    "functional": "Functional Explorations"
+  },
+  "badges": {
+    "imagingAvailable": "Imaging Available",
+    "fullTechnicalPlatform": "Full Technical Platform",
+    "service247": "24/7 Service",
+    "modernTechnicalPlatform": "Modern Technical Platform"
+  },
+  "addresses": {
+    "yao-melen": "Opposite GP Melen, Palais des Verres Building, 4th floor, Yaoundé",
+    "yao-mvogmbi": "Mvog-Mbi, Afriland First Bank Building, Yaoundé",
+    "yao-ngousso": "Fabrique Ngousso, RENAPROV Building, Yaoundé",
+    "dla-village": "Village, above Le Temps Pharmacy, Douala",
+    "dla-bessengue": "Bessengue, Feu Rouge, next to Afriland First Bank, Douala",
+    "dla-bonaberi": "Bonassama, Mobile Bonabéri (SODIPROVET SARL), Douala",
+    "dla-beedi": "Opposite Malangue Bakery, Douala",
+    "baf-biao": "Biao Roundabout, Bafoussam"
+  }
+}

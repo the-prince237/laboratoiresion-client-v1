@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 export const Video = ({
@@ -15,6 +16,8 @@ export const Video = ({
   >[];
   children?: React.ReactNode;
 }) => {
+  const t = useTranslations('common');
+
   return (
     <video
       autoPlay
@@ -27,7 +30,7 @@ export const Video = ({
       {sources?.map((source, index) => (
         <source key={index} type='video/mp4' {...source} />
       ))}
-      {children || 'video.unsupport-message'}
+      {children || t('videoUnsupported')}
     </video>
   );
 };

@@ -1,10 +1,12 @@
 import { PhoneCall } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { Badge, GridBackground, GridPattern, Spotlight, Title1, Video } from "../../";
 import { HeroToggler } from "./components";
-import Link from "next/link";
+import { Link } from '@/i18n/navigation';
 
 export function HomeHero() {
+  const t = useTranslations('home.hero');
   return (
     <div className="w-full overflow-hidden py-20 lg:py-40">
 
@@ -37,16 +39,19 @@ export function HomeHero() {
               )}/>
             <div className="flex gap-8 padded-x flex-col">
               <Title1 className="text-5xl md:text-7xl tracking-tighter text-left font-regular">
-                Analyses <b className="font-black">Biologiques</b>  et Imagerie <b className="font-black text-orange">Médicale</b>.
+                {t.rich('title', {
+                  b1: (chunks) => <b className="font-black">{chunks}</b>,
+                  b2: (chunks) => <b className="font-black text-orange">{chunks}</b>,
+                })}
               </Title1>
               <div className="w-full flex flex-col gap-4">
-                <Badge className="w-fit bg-white/50 backdrop-blur-xl" variant="outline">Je suis ...</Badge>
+                <Badge className="w-fit bg-white/50 backdrop-blur-xl" variant="outline">{t('badge')}</Badge>
                 <div className="flex flex-col gap-4">
                   <HeroToggler />
                 </div>
 
                 <Link href="#contacts" className="px-6 py-2 bg-secondary text-white font-black flex justify-center items-center gap-5 rounded-md" >
-                  Contactez Nous <PhoneCall className="w-4 h-4" />
+                  {t('contact')} <PhoneCall className="w-4 h-4" />
                 </Link>
               </div>
             </div>

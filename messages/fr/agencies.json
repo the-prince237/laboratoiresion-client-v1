@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "badge": "Excellence en Diagnostic Médical",
+    "title": "Nos Sites de Laboratoire à Travers le Cameroun",
+    "description": "Trouvez l'agence Laboratoire SION la plus proche et accédez à des diagnostics médicaux fiables avec des professionnels certifiés et des équipements modernes.",
+    "cta": "Trouver une Agence"
+  },
+  "trust": {
+    "title": "Pourquoi Choisir Laboratoire SION ?",
+    "description": "Choisi par des milliers de patients à travers le Cameroun pour des diagnostics médicaux précis, rapides et confidentiels.",
+    "features": {
+      "certified": {
+        "title": "Laboratoire Certifié",
+        "description": "Accrédité par les autorités sanitaires nationales et internationales"
+      },
+      "fast": {
+        "title": "Résultats Rapides",
+        "description": "Traitement express disponible avec des diagnostics précis"
+      },
+      "confidential": {
+        "title": "Confidentialité",
+        "description": "Vos données médicales sont protégées selon les normes de sécurité les plus élevées"
+      }
+    }
+  },
+  "locations": {
+    "title": "Nos Emplacements",
+    "description": "Sélectionnez une ville pour voir nos sites de laboratoire et trouver celui qui est le plus proche de vous.",
+    "all": "Tout",
+    "available": "{count, plural, one {# emplacement disponible} other {# emplacements disponibles}}"
+  },
+  "card": {
+    "contactDetails": "Coordonnées",
+    "availableServices": "Services Disponibles",
+    "call": "Appeler",
+    "email": "Email",
+    "directions": "Itinéraire"
+  },
+  "services": {
+    "biology": "Analyses Biologiques",
+    "imaging": "Imagerie Médicale",
+    "ultrasound": "Échographie",
+    "functional": "Explorations Fonctionnelles"
+  },
+  "badges": {
+    "imagingAvailable": "Imagerie Disponible",
+    "fullTechnicalPlatform": "Plateau Technique Complet",
+    "service247": "Service 24h/24 – 7j/7",
+    "modernTechnicalPlatform": "Plateau Technique Moderne"
+  },
+  "addresses": {
+    "yao-melen": "En face de la GP Melen, Immeuble Palais des Verres, 4e étage, Yaoundé",
+    "yao-mvogmbi": "Mvog-Mbi, Immeuble Afriland First Bank, Yaoundé",
+    "yao-ngousso": "Fabrique Ngousso, Immeuble RENAPROV, Yaoundé",
+    "dla-village": "Village, au-dessus de la Pharmacie Le Temps, Douala",
+    "dla-bessengue": "Bessengue, Feu Rouge, à côté d’Afriland First Bank, Douala",
+    "dla-bonaberi": "Bonassama, Mobile Bonabéri (SODIPROVET SARL), Douala",
+    "dla-beedi": "En face de la Boulangerie Malangue, Douala",
+    "baf-biao": "Rond-point Biao, Bafoussam"
+  }
+}

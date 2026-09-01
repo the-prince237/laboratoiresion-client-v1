@@ -1,0 +1,10 @@
+{
+  "sidebarTitle": "Rubriques",
+  "heroTitle": "Nos Rubriques",
+  "heroDescription": "Suivez nous au quotidien afin de profiter de nos revues, publications, et conseils santés quotidiens.",
+  "articleNotFoundTitle": "Article non trouvé",
+  "articleNotFoundDescription": "L'article que vous recherchez est introuvable ou n'a pas de PDF associé.",
+  "sectionNotFound": "Rubrique non trouvée.",
+  "noArticles": "Aucun article disponible pour le moment.",
+  "pageCount": "{count, plural, one {# page} other {# pages}}"
+}

@@ -4,6 +4,7 @@ import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { man1, man2, woman1, woman2, woman3 } from "../../../../public/images";
 
@@ -15,43 +16,7 @@ type Testimonial = {
 };
 
 export const Testimonials = ({
-  testimonials = [
-    {
-      quote:
-        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: woman1,
-    },
-    {
-      quote:
-        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: man1,
-    },
-    {
-      quote:
-        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-      name: "Emily Watson",
-      designation: "Operations Director at CloudScale",
-      src: woman2,
-    },
-    {
-      quote:
-        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-      name: "James Kim",
-      designation: "Engineering Lead at DataPro",
-      src: man2,
-    },
-    {
-      quote:
-        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-      name: "Lisa Thompson",
-      designation: "VP of Technology at FutureNet",
-      src: woman3,
-    },
-  ],
+  testimonials,
   autoplay = false,
   className,
 }: {
@@ -59,14 +24,49 @@ export const Testimonials = ({
   autoplay?: boolean;
   className?: string;
 }) => {
+  const t = useTranslations('home.testimonials');
+  // TODO: remplacer par de vrais témoignages clients
+  const defaultTestimonials: Testimonial[] = [
+    {
+      quote: t('items.t1.quote'),
+      name: t('items.t1.name'),
+      designation: t('items.t1.designation'),
+      src: woman1,
+    },
+    {
+      quote: t('items.t2.quote'),
+      name: t('items.t2.name'),
+      designation: t('items.t2.designation'),
+      src: man1,
+    },
+    {
+      quote: t('items.t3.quote'),
+      name: t('items.t3.name'),
+      designation: t('items.t3.designation'),
+      src: woman2,
+    },
+    {
+      quote: t('items.t4.quote'),
+      name: t('items.t4.name'),
+      designation: t('items.t4.designation'),
+      src: man2,
+    },
+    {
+      quote: t('items.t5.quote'),
+      name: t('items.t5.name'),
+      designation: t('items.t5.designation'),
+      src: woman3,
+    },
+  ];
+  const items = testimonials ?? defaultTestimonials;
   const [active, setActive] = useState(0);
 
   const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
+    setActive((prev) => (prev + 1) % items.length);
   };
 
   const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setActive((prev) => (prev - 1 + items.length) % items.length);
   };
 
   const isActive = (index: number) => {
@@ -90,7 +90,7 @@ export const Testimonials = ({
         <div>
           <div className="relative h-80 w-full">
             <AnimatePresence>
-              {testimonials.map((testimonial, index) => (
+              {items.map((testimonial, index) => (
                 <motion.div
                   key={index}
                   initial={{
@@ -106,7 +106,7 @@ export const Testimonials = ({
                     rotate: isActive(index) ? 0 : randomRotateY(),
                     zIndex: isActive(index)
                       ? 999
-                      : testimonials.length + 2 - index,
+                      : items.length + 2 - index,
                     y: isActive(index) ? [0, -80, 0] : 0,
                   }}
                   exit={{
@@ -155,13 +155,13 @@ export const Testimonials = ({
             }}
           >
             <h3 className="text-2xl font-bold text-foreground">
-              {testimonials[active].name}
+              {items[active].name}
             </h3>
             <p className="text-sm text-muted-foreground">
-              {testimonials[active].designation}
+              {items[active].designation}
             </p>
             <motion.p className="text-lg text-muted-foreground mt-8">
-              {testimonials[active].quote.split(" ").map((word, index) => (
+              {items[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
                   initial={{

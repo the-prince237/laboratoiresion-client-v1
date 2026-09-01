@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Catalogue complet des examens médicaux | Laboratoire Sion",
+    "description": "Explorez notre catalogue complet d'analyses et examens médicaux au Laboratoire Sion : biologie, biochimie, immunologie, hématologie, bactériologie, endocrinologie, radiologie, échographie, biologie moléculaire, et examens spécialisés. Retrouvez les prix, délais, indications et toutes les informations pour patients et professionnels de santé.",
+    "siteName": "Laboratoire Sion",
+    "keywords": [
+      "examens médicaux",
+      "laboratoire Sion",
+      "biologie médicale",
+      "analyses médicales",
+      "prix examen",
+      "délais examen",
+      "biochimie",
+      "immunologie",
+      "hématologie",
+      "bactériologie",
+      "radiologie",
+      "échographie",
+      "biologie moléculaire",
+      "examens spécialisés"
+    ]
+  },
+  "categoryMeta": {
+    "notFoundTitle": "Examen non trouvé | Laboratoire Sion",
+    "notFoundDescription": "L'examen que vous recherchez n'a pas été trouvé. Veuillez vérifier l'URL ou revenir à la page des examens.",
+    "title": "{label} - {tag} | Laboratoire Sion",
+    "description": "Découvrez le détail complet de l'examen \"{label}\" dans la catégorie {tag}. Informations sur les prix, délais, et indications cliniques disponibles pour les patients et les professionnels de santé.",
+    "keywords": [
+      "laboratoire Sion",
+      "examens médicaux",
+      "prix examen",
+      "délais examen",
+      "biologie médicale",
+      "analyses de laboratoire"
+    ]
+  },
+  "layout": {
+    "sidebarTitle": "Catégorie",
+    "heroTitle": "Nos Examens",
+    "heroDescription": "Découvrez notre gamme complète d'examens médicaux, soigneusement organisés par catégories pour faciliter votre recherche. Que vous soyez à la recherche d'analyses de routine ou de tests spécialisés, notre plateforme vous offre un accès rapide et simple à toutes les informations nécessaires pour prendre des décisions éclairées concernant votre santé."
+  },
+  "page": {
+    "noExams": "Aucun examen listé pour le moment"
+  }
+}

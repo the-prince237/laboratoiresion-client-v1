@@ -8,9 +8,15 @@ import {
   NavigationMenuTrigger,
 } from '@/components';
 import React from 'react';
-import { navigationItems } from './data';
+import { getNavigationItems } from './data';
+import { useLocale, useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
+import type { Locale } from '@/i18n/routing';
 
 export const Navigator = () => {
+  const locale = useLocale() as Locale;
+  const t = useTranslations('header');
+  const navigationItems = getNavigationItems(locale, t);
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -19,10 +25,10 @@ export const Navigator = () => {
             <NavigationMenuItem key={`${item.title}-${index}`}>
               {item.link ? (
                 <NavigationMenuLink
+                  asChild
                   className='flex min-w-fit flex-row items-center gap-3 font-semibold'
-                  href={item.link}
                 >
-                  {item.title}
+                  <Link href={item.link}>{item.title}</Link>
                 </NavigationMenuLink>
               ) : (
                 <NavigationMenuTrigger className='bg-transparent'>{item.title}</NavigationMenuTrigger>
@@ -33,11 +39,13 @@ export const Navigator = () => {
                     {item.links.map(({ title, Icon, link }, x) => (
                       <NavigationMenuLink
                         key={`${title}-${x}`}
+                        asChild
                         className='flex min-w-fit flex-row items-center gap-3'
-                        href={link}
                       >
-                        <Icon size={18} className='min-w-4.5' />
-                        <span className='min-w-fit'>{title}</span>
+                        <Link href={link}>
+                          <Icon size={18} className='min-w-4.5' />
+                          <span className='min-w-fit'>{title}</span>
+                        </Link>
                       </NavigationMenuLink>
                     ))}
                   </div>

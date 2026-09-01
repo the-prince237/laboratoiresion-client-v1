@@ -1,0 +1,108 @@
+{
+  "hero": {
+    "title": "Laboratory <b1>Testing</b1> and Medical <b2>Imaging</b2>.",
+    "badge": "I am a ...",
+    "contact": "Contact Us",
+    "patient": {
+      "title": "Patient",
+      "description": "Reliable, fast and confidential laboratory testing and medical imaging — for clear results and peace of mind."
+    },
+    "prescriber": {
+      "title": "Prescriber",
+      "description": "SION Laboratories supports prescribing physicians with accurate diagnostics and rapid sharing of results.\nReliability, scientific rigor and collaboration in the service of patients."
+    }
+  },
+  "features": {
+    "tagline": "Why Choose Us?",
+    "title": "Discover what sets <gradient>SION Laboratories</gradient> apart",
+    "subtitle": "Your trusted partner for quality medical examinations",
+    "cta": "Book an Appointment",
+    "items": {
+      "tech-1": {
+        "title": "Cutting-Edge Technology",
+        "description": "We use the latest technologies to deliver accurate and reliable examinations."
+      },
+      "tech-2": {
+        "title": "Continuous Innovation",
+        "description": "Constant technological monitoring keeps our examinations at the leading edge."
+      },
+      "tech-3": {
+        "title": "Reliable Results",
+        "description": "Accurate analyses and detailed reports for complete confidence."
+      },
+      "tech-4": {
+        "title": "Specialized Staff",
+        "description": "A qualified team dedicated to providing you with personalized service."
+      }
+    }
+  },
+  "stats": {
+    "badge": "Our Impact",
+    "title": "A Trusted Medical Laboratory",
+    "subtitle": "Delivering accurate results with cutting-edge technology and expert care",
+    "items": {
+      "tests": {
+        "label": "Tests Performed Annually",
+        "description": "Comprehensive diagnostic services"
+      },
+      "patients": {
+        "label": "Satisfied Patients",
+        "description": "Trusted by healthcare professionals"
+      },
+      "accuracy": {
+        "label": "Accuracy Rate",
+        "description": "Industry-leading precision"
+      },
+      "emergency": {
+        "label": "Emergency Services",
+        "description": "Round-the-clock availability"
+      }
+    },
+    "ctaTitle": "Need a Test? Book Your Appointment Today",
+    "ctaSubtitle": "Fast, accurate and reliable laboratory services at your convenience",
+    "bookNow": "Book Now",
+    "learnMore": "Learn More"
+  },
+  "contacts": {
+    "tagline": "Get in Touch",
+    "title": "Contact Us",
+    "subtitle": "Join our community of partners and grateful patients, and stay connected to all our updates.",
+    "platforms": {
+      "facebook": "Social Network",
+      "tiktok": "Short Videos",
+      "instagram": "Visual Stories",
+      "email": "Contact Us"
+    },
+    "connect": "Connect",
+    "whatsapp": "WhatsApp!"
+  },
+  "testimonials": {
+    "items": {
+      "t1": {
+        "quote": "I received my test results within a few hours, with clear explanations. The team is welcoming and the follow-up truly reassuring.",
+        "name": "Marie-Claire Ngo Bassa",
+        "designation": "Patient in Douala"
+      },
+      "t2": {
+        "quote": "The reports are accurate and delivered quickly, which makes managing my patients much easier. A reliable partner for prescribing examinations.",
+        "name": "Dr Emmanuel Mbarga",
+        "designation": "General Practitioner"
+      },
+      "t3": {
+        "quote": "A warm welcome, stress-free sample collection and reliable results. I recommend the laboratory to my whole family.",
+        "name": "Estelle Fouda",
+        "designation": "Patient in Yaoundé"
+      },
+      "t4": {
+        "quote": "The quality of the analyses and the team's scientific rigor give me complete confidence in the follow-up of my patients.",
+        "name": "Dr Serge Kamga",
+        "designation": "Cardiologist"
+      },
+      "t5": {
+        "quote": "The staff is attentive and confidentiality is always respected. Results are clear and delivered on time, as promised.",
+        "name": "Joséphine Atangana",
+        "designation": "Patient in Bafoussam"
+      }
+    }
+  }
+}

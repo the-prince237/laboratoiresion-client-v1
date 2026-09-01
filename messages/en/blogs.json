@@ -1,0 +1,10 @@
+{
+  "sidebarTitle": "Sections",
+  "heroTitle": "Our Sections",
+  "heroDescription": "Follow us daily to enjoy our reviews, publications, and daily health advice.",
+  "articleNotFoundTitle": "Article not found",
+  "articleNotFoundDescription": "The article you are looking for could not be found or has no associated PDF.",
+  "sectionNotFound": "Section not found.",
+  "noArticles": "No articles available at the moment.",
+  "pageCount": "{count, plural, one {# page} other {# pages}}"
+}

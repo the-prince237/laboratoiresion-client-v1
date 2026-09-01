@@ -1,9 +1,14 @@
-import { blogSections } from '@/app/blogs/data';
+import { getBlogSections } from '@/data/blogs';
+import type { Locale } from '@/i18n/routing';
 import { Building, Dna, Gift, List, ListFilter, Newspaper, Package, Phone, PlusCircle, PlusSquare, Scan, SearchX } from 'lucide-react';
 import { BiHealth } from 'react-icons/bi';
 import { GiDoctorFace } from 'react-icons/gi';
 
-export const navigationItems = [
+/**
+ * `t` est la fonction de traduction du namespace "header"
+ * (useTranslations('header') côté client).
+ */
+export const getNavigationItems = (locale: Locale, t: (key: string) => string) => [
   // {
   //   title: 'Rencontrer Nos Médecins Partenaires',
   //   link: '/partners/prescribers',
@@ -11,83 +16,83 @@ export const navigationItems = [
   // }, TO DO : handle Partners Page
   {
     Icon: List,
-    title: 'Services',
+    title: t('nav.services'),
     links: [
       {
-        title: 'Analyses Biologiques',
+        title: t('nav.biologicalAnalyses'),
         link: '/services/biological-analyses',
         Icon: Dna,
       },
       {
-        title: 'Imagerie Médicale',
+        title: t('nav.medicalImaging'),
         link: '/services/medical-imaging',
         Icon: Scan,
       },
       {
-        title: 'Exploration Fonctionnelle',
+        title: t('nav.functionalExploration'),
         link: '/services/functional-exploration',
         Icon: SearchX,
       }
     ],
   },
   {
-    title: "Espace Patient",
+    title: t('nav.patientArea'),
     Icon: BiHealth,
     links: [
       {
-        title: 'Conseil De La Semaine',
+        title: t('nav.weeklyAdvice'),
         link: '/blogs/weekly-advice',
         Icon: Package,
       },
       {
-        title: 'Préparer Ma Visite',
+        title: t('nav.prepareMyVisit'),
         link: '/our-agencies#agencies-section',
         Icon: ListFilter,
       },
     ],
   },
   {
-    title: "Espace Pro",
+    title: t('nav.proArea'),
     Icon: PlusSquare,
     links: [
       {
-        title: 'Devenir Partenaire',
+        title: t('nav.becomePartner'),
         link: '#contacts',
         Icon: PlusCircle,
       },
       {
-        title: "Manuel De Prélèvements",
+        title: t('nav.samplingManual'),
         link: '/exams',
         Icon: Gift,
       },
       {
-        title: 'Quoi de Neuf SION ?',
+        title: t('nav.whatsNewSion'),
         link: '/blogs/quoi-de-neuf-sion',
         Icon: Newspaper,
       }
     ]
   },
   {
-    title: "Blog",
+    title: t('nav.blog'),
     Icon: Newspaper,
-    links: blogSections.map(({label, tag, Icon}) => ({
+    links: getBlogSections(locale).map(({label, tag, Icon}) => ({
       title: label,
       link: `/blogs/${tag}`,
       Icon
     }))
   },
   {
-    title: "Nox Examens",
+    title: t('nav.ourExams'),
     Icon: GiDoctorFace,
     link: "/exams"
   },
   {
-    title: "Nos Agences",
+    title: t('nav.ourAgencies'),
     Icon: Building,
     link: '/our-agencies'
   },
   {
-    title: "Contactez Nous",
+    title: t('nav.contactUs'),
     Icon: Phone,
     link: '#contacts'
   },

@@ -1,11 +1,13 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
 import { Title1 } from '../common';
 import { PhoneCall } from 'lucide-react';
 import { BsWhatsapp } from 'react-icons/bs';
 
 export const Contacts = () => {
+  const t = useTranslations('home.contacts');
   const [, setHoveredIndex] = useState<number | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
@@ -30,7 +32,7 @@ export const Contacts = () => {
       gradient: 'from-blue-600 to-blue-500',
       shadowColor: 'rgba(59, 130, 246, 0.5)',
       link: 'https://web.facebook.com/profile.php?id=61580940000675',
-      description: 'Social Network'
+      description: t('platforms.facebook')
     },
     {
       name: 'TikTok',
@@ -42,7 +44,7 @@ export const Contacts = () => {
       gradient: 'from-pink-500 to-cyan-500',
       shadowColor: 'rgba(236, 72, 153, 0.5)',
       link: 'https://www.tiktok.com/@laboratoires_sion',
-      description: 'Short Videos'
+      description: t('platforms.tiktok')
     },
     {
       name: 'Instagram',
@@ -54,7 +56,7 @@ export const Contacts = () => {
       gradient: 'from-purple-600 via-pink-600 to-orange-500',
       shadowColor: 'rgba(219, 39, 119, 0.5)',
       link: 'https://www.instagram.com/laboratoires_sion/',
-      description: 'Visual Stories'
+      description: t('platforms.instagram')
     },
     {
       name: 'Email',
@@ -66,7 +68,7 @@ export const Contacts = () => {
       gradient: 'from-gray-700 to-gray-500',
       shadowColor: 'rgba(107, 114, 128, 0.5)',
       link: 'mailto:contact@laboratoiresion.org',
-      description: 'Contact Us'
+      description: t('platforms.email')
     },
   ];
 
@@ -91,18 +93,18 @@ export const Contacts = () => {
         <div className={`text-center mb-16 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-block mb-4 px-4 py-1.5 bg-linear-to-r from-blue-500/10 to-purple-500/10 rounded-full border border-blue-500/20">
             <span className="text-sm font-medium bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Prenez Contact
+              {t('tagline')}
             </span>
           </div>
           
           <Title1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
             <span className="bg-linear-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
-              Contactez Nous
+              {t('title')}
             </span>
           </Title1>
-          
+
           <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed">
-            Rejoignez notre communauté de partenaires et de patients reconnaissants, et restez connectés à toutes nous mises à jour.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -155,7 +157,7 @@ export const Contacts = () => {
                   {/* Arrow Icon */}
                   <div className="mt-4 flex items-center text-gray-600 group-hover:text-white transition-all duration-300">
                     <span className="text-sm font-medium group-hover:translate-x-0 transition-all duration-300">
-                      Connect
+                      {t('connect')}
                     </span>
                     <svg 
                       className="w-4 h-4 ml-2 transform transition-transform duration-300 group-hover:translate-x-1" 
@@ -192,7 +194,7 @@ export const Contacts = () => {
           <a className='w-full sm:w-1/2' href="tel:+237693056263" target="_blank" rel="noopener noreferrer">
             <button className="group w-full justify-between relative inline-flex items-center gap-2 px-8 py-3 bg-linear-to-r from-green-800  to-green-600 rounded-full text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
               <BsWhatsapp />
-              <span className="relative z-10">Whatsapp !</span>
+              <span className="relative z-10">{t('whatsapp')}</span>
               <svg className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
