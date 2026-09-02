@@ -84,7 +84,7 @@ const allArticles = {
         image: "https://plus.unsplash.com/premium_photo-1723044801071-1fef0817e1c2?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         number: 8,
         date: "2019-01-01",
-        pages: 4,
+        pages: 6,
         timeToRead: "10 min",
         resume: "Une interprétation correcte de l'hémogramme permet d'orienter vers des pistes diagnostiques et vers la prescription rationnelle d'examens complémentaires."
       },
